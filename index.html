@@ -1,7 +1,8 @@
 <!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Ahmad Dimas - Senior Backend Portfolio</title>
+<title>Ahmad Dimas — Backend Engineer | Java • Spring Boot • Microservices | 7+ YOE</title>
+<meta name="description" content="Backend Engineer with 7+ years experience in Java, Spring Boot, Kafka, Docker, and cloud-native systems. 20+ projects delivered. Remote-ready. Open to global opportunities.">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,FILL@0..1&amp;display=swap" rel="stylesheet">
@@ -170,6 +171,55 @@
             z-index: -1;
             pointer-events: none;
         }
+
+        /* Subtle Card Hover Lift */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gentle Gradient Shift for Badge */
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .gradient-badge {
+            background: linear-gradient(90deg, #dbe1ff, #d6e0f3, #dbe1ff);
+            background-size: 200% 200%;
+            animation: gradient-shift 4s ease infinite;
+        }
+
+        /* Smooth link underline animation */
+        .hover-underline {
+            position: relative;
+        }
+        .hover-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: currentColor;
+            transition: width 0.3s ease;
+        }
+        .hover-underline:hover::after {
+            width: 100%;
+        }
+
+        /* Staggered fade-in for lists */
+        .stagger-item {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.5s ease;
+        }
+        .stagger-item.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
@@ -183,11 +233,11 @@
 <a class="font-body-md text-secondary hover:text-primary transition-colors" href="#skills">Skills</a>
 <a class="font-body-md text-secondary hover:text-primary transition-colors" href="#contact">Contact</a>
 <div class="flex gap-4 ml-4">
-<a class="border border-outline text-on-surface px-6 py-2 rounded-lg font-body-md hover:bg-surface-container transition-all flex items-center gap-2" href="#">
+<a class="border border-outline text-on-surface px-6 py-2 rounded-lg font-body-md hover:bg-surface-container transition-all flex items-center gap-2" href="resume.pdf">
 <svg class="lucide lucide-download" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
                         CV
                     </a>
-<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-body-md hover:opacity-90 transition-all pulse-cta">Hire Me</button>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-lg font-body-md hover:opacity-90 transition-all pulse-cta" href="mailto:ahmaddimas18@gmail.com">Hire Me</a>
 </div>
 </div>
 <button class="md:hidden text-on-surface">
@@ -201,13 +251,13 @@
 <div class="grid md:grid-cols-12 gap-gutter items-center w-full">
 <div class="md:col-span-7 z-10 order-2 md:order-1">
 <div class="space-y-6">
-<span class="inline-block font-label-mono text-label-mono text-primary bg-primary-container/10 px-3 py-1 rounded">AVAILABLE FOR REMOTE WORK</span>
+<span class="inline-block font-label-mono text-label-mono text-primary bg-primary-container/10 px-3 py-1 rounded gradient-badge">OPEN FOR REMOTE & FREELANCE</span>
 <h1 class="font-display-lg text-4xl md:text-display-lg tracking-tight">Ahmad Dimas Abid Muttaqi</h1>
 <div class="h-10 md:h-12">
-<span class="font-headline-md md:font-headline-lg text-xl md:text-headline-lg text-secondary typewriter" id="typewriter">Senior Backend </span>
+<span class="font-headline-md md:font-headline-lg text-xl md:text-headline-lg text-secondary typewriter" id="typewriter">Backend </span>
 </div>
 <p class="font-body-lg text-body-md md:text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
-                            Senior Backend Engineer with 7+ years of experience specializing in high-impact infrastructure and legacy modernization. Architecting robust digital foundations with a focus on security, scalability, and seamless remote collaboration.
+                            Backend Engineer who ships systems that last. 7+ years building production backends across airline loyalty, insurance, e-commerce, and government systems — with Java, Spring Boot, Kafka, Docker, and cloud-native infrastructure. Delivered 20+ projects, improved code coverage and performance measurably, and remediated security vulnerabilities for monthly production sign-offs.
                         </p>
 <div class="flex flex-wrap gap-4 pt-4">
 <a class="bg-inverse-surface text-inverse-on-surface px-8 py-4 rounded font-body-md flex items-center gap-2 hover:bg-on-surface transition-all" href="#projects">
@@ -223,7 +273,7 @@
 </div>
 <div class="md:col-span-5 relative mb-8 md:mb-0 order-1 md:order-2 float-anim">
 <div class="relative w-full aspect-[4/5] max-w-[320px] md:max-w-md mx-auto">
-<img alt="Ahmad Dimas Professional Portrait" class="w-full h-full object-cover hero-mask grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBskTBCjiMGR5CUE4rPGe3_RPNEQ7ssOXITxI-SEN-urAGqppbUi-CYOEMMQqjFEysmyu7WyCifZAIiFk-EkEEXg9uFTXHrzEVv-fNjhaUHzBXIOHxvGJqLac5rFY8v2xTapTLjCOa6-wVHf-5SHdz-vgAI6goBdhS1BFzsL16qu03GE7eBmmCX7_umGh6ewJapmzDp8QDpjAZ_tgiXPH08wH9_nJIcXgxhFQ9prDHCjThIoSRKJqRxdz2BCfTmPiCwozH1afM1VC5R">
+<img alt="Ahmad Dimas Professional Portrait" class="w-full h-full object-cover hero-mask grayscale hover:grayscale-0 transition-all duration-700" src="photo.png">
 </div>
 </div>
 </div>
@@ -267,25 +317,26 @@
 </div>
 <div class="grid grid-cols-2 gap-4 md:gap-6">
 <div class="p-6 md:p-8 border border-border-subtle bg-white">
+<span class="text-3xl md:text-display-lg text-primary block mb-2">7+</span>
+<span class="font-label-mono text-xs uppercase tracking-widest text-secondary">Years Experience</span>
+</div>
+<div class="p-6 md:p-8 border border-border-subtle bg-white">
+<span class="text-3xl md:text-display-lg text-primary block mb-2">5</span>
+<span class="font-label-mono text-xs uppercase tracking-widest text-secondary">Companies</span>
+</div>
+<div class="p-6 md:p-8 border border-border-subtle bg-white">
 <span class="text-3xl md:text-display-lg text-primary block mb-2">3+</span>
 <span class="font-label-mono text-xs uppercase tracking-widest text-secondary">Years Remote</span>
 </div>
 <div class="p-6 md:p-8 border border-border-subtle bg-white">
-<span class="text-3xl md:text-display-lg text-primary block mb-2">100%</span>
-<span class="font-label-mono text-xs uppercase tracking-widest text-secondary">Async-Ready</span>
-</div>
-<div class="p-6 md:p-8 border border-border-subtle bg-white">
-<span class="text-3xl md:text-display-lg text-primary block mb-2">6h</span>
-<span class="font-label-mono text-xs uppercase tracking-widest text-secondary">TZ Overlap</span>
-</div>
-<div class="p-6 md:p-8 border border-border-subtle bg-white">
-<span class="text-3xl md:text-display-lg text-primary block mb-2">7+</span>
-<span class="font-label-mono text-xs uppercase tracking-widest text-secondary">Years Experience</span>
+<span class="text-3xl md:text-display-lg text-primary block mb-2">4</span>
+<span class="font-label-mono text-xs uppercase tracking-widest text-secondary">Industries</span>
 </div>
 </div>
 </div>
 </div>
-</section><section class="py-24 bg-surface/50 backdrop-blur-sm reveal border-b border-border-subtle active" id="strengths"><div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop"><div class="mb-16"><div class="flex items-center gap-4 mb-4"><span class="text-primary"><svg class="lucide lucide-layers" fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></span><h2 class="font-headline-lg text-headline-lg shuffle-target" data-shuffled="true">Engineering Strengths</h2></div><p class="text-secondary mt-2">Core competencies developed through years of high-stakes backend engineering.</p></div><div class="grid md:grid-cols-3 gap-gutter"><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-refresh-cw text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg> Legacy Modernization</h4><p class="text-on-surface-variant text-sm leading-relaxed">Converting monolithic systems into resilient microservices with zero downtime.</p></div><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-shield text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg> Security-First</h4><p class="text-on-surface-variant text-sm leading-relaxed">Vulnerability remediation (OWASP) and building secure authentication pipelines.</p></div><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-zap text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M4 14h7L9 21l11-11h-7l2-7z"></path></svg> Performance Tuning</h4><p class="text-on-surface-variant text-sm leading-relaxed">Optimizing database queries and backend latency for high-traffic environments.</p></div><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-cloud text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 19c3.037 0 5.5-2.463 5.5-5.5 0-2.97-2.354-5.382-5.29-5.49A7.001 7.001 0 0 0 5 10c-2.732 0-4.987 2.178-5.05 4.91A4.5 4.5 0 0 0 4.5 19z"></path></svg> Cloud Native</h4><p class="text-on-surface-variant text-sm leading-relaxed">Expertise in OpenShift, Kubernetes, and Docker for scalable deployments.</p></div><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-eye text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg> Full Observability</h4><p class="text-on-surface-variant text-sm leading-relaxed">Implementing ELK Stack and APM for data-driven debugging and monitoring.</p></div><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-users text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Async Leadership</h4><p class="text-on-surface-variant text-sm leading-relaxed">Scaling engineering impact through documentation and proactive collaboration.</p></div></div></div></section>
+</section>
+<section class="py-24 bg-surface/50 backdrop-blur-sm reveal border-b border-border-subtle active" id="strengths"><div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop"><div class="mb-16"><div class="flex items-center gap-4 mb-4"><span class="text-primary"><svg class="lucide lucide-layers" fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></span><h2 class="font-headline-lg text-headline-lg shuffle-target" data-shuffled="true">Engineering Strengths</h2></div><p class="text-secondary mt-2">Core competencies developed through production environments across insurance, government, e-commerce, and airline domains.</p></div><div class="grid md:grid-cols-3 gap-gutter"><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-refresh-cw text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg> Legacy Modernization</h4><p class="text-on-surface-variant text-sm leading-relaxed">Strangler-fig pattern migrations, monolith-to-microservices, Java 8 to 17/25 upgrades, zero-downtime deployments.</p></div><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-shield text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg> Security-First</h4><p class="text-on-surface-variant text-sm leading-relaxed">OWASP remediation, mTLS, JWT/OAuth2, Auth0 integration, SSRF protection, key rotation, pentest clean sign-offs.</p></div><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-zap text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M4 14h7L9 21l11-11h-7l2-7z"></path></svg> Performance Tuning</h4><p class="text-on-surface-variant text-sm leading-relaxed">N+1 query elimination, cache stampede protection, Redis distributed locks, rate limiting, connection pool optimization.</p></div><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-cloud text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 19c3.037 0 5.5-2.463 5.5-5.5 0-2.97-2.354-5.382-5.29-5.49A7.001 7.001 0 0 0 5 10c-2.732 0-4.987 2.178-5.05 4.91A4.5 4.5 0 0 0 4.5 19z"></path></svg> Cloud Native</h4><p class="text-on-surface-variant text-sm leading-relaxed">OpenShift, Docker, Quarkus, AWS S3, multi-stage builds, and containerized deployments.</p></div><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-eye text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg> Full Observability</h4><p class="text-on-surface-variant text-sm leading-relaxed">ELK Stack, APM, Prometheus, Grafana, OpenTelemetry, structured logging (ECS), distributed tracing, health checks.</p></div><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-code-2 text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg> Testing Discipline</h4><p class="text-on-surface-variant text-sm leading-relaxed">Jacoco enforcement, Testcontainers, JUnit/Mockito, Vitest, integration testing, and CI/CD quality gates.</p></div></div></div></section>
 <!-- Professional Experience -->
 <section class="py-24 bg-surface-container-low/50 backdrop-blur-sm reveal active" id="experience">
 <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
@@ -296,50 +347,87 @@
 </span>
 <h2 class="font-headline-lg text-headline-lg shuffle-target" data-shuffled="true">Professional Experience</h2>
 </div>
-<p class="text-secondary mt-2">A track record of technical leadership and architectural growth across diverse domains.</p>
+<p class="text-secondary mt-2">A track record of hands-on engineering and architectural growth across diverse domains.</p>
 </div>
 <div class="space-y-16">
+<!-- Kemenkeu RI -->
+<div class="grid md:grid-cols-4 gap-8">
+<div class="md:col-span-1">
+<span class="font-label-mono text-secondary">Feb 2026 - Present</span>
+<h4 class="font-bold mt-2 uppercase tracking-wide">Backend Developer</h4>
+<p class="text-primary text-sm font-bold mt-1">KEMENTERIAN KEUANGAN RI</p>
+</div>
+<div class="md:col-span-3 border-l border-border-subtle pl-6 md:pl-12">
+<ul class="space-y-4 text-on-surface-variant leading-relaxed">
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Developed and maintained backend services using C# and .NET Core for performance assessment systems.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Conducted system maintenance and performance optimization under strict government compliance.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Operated fully remote within a distributed government enterprise team.</li>
+</ul>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="tech-tag">C#</span><span class="tech-tag">.NET Core</span>
+</div>
+</div>
+</div>
 <!-- AXA Mandiri -->
 <div class="grid md:grid-cols-4 gap-8">
 <div class="md:col-span-1">
-<span class="font-label-mono text-secondary">2023 - 2026</span>
+<span class="font-label-mono text-secondary">Nov 2023 - Apr 2026</span>
 <h4 class="font-bold mt-2 uppercase tracking-wide">Backend Developer (Java)</h4>
 <p class="text-primary text-sm font-bold mt-1">AXA MANDIRI FINANCIAL SERVICES</p>
 </div>
 <div class="md:col-span-3 border-l border-border-subtle pl-6 md:pl-12">
 <ul class="space-y-4 text-on-surface-variant leading-relaxed">
-<li class="flex gap-3"><span class="text-primary font-bold">»</span> Led migration of legacy services to Red Hat OpenShift, transitioning from on-premise to cloud.</li>
-<li class="flex gap-3"><span class="text-primary font-bold">»</span> Remediated security vulnerabilities identified by pentesters for monthly production deployments.</li>
-<li class="flex gap-3"><span class="text-primary font-bold">»</span> <span class="bg-primary-container/10 px-1 font-bold text-on-surface">Raised code coverage from 30% to 80%+</span> by integrating JUnit/Mockito test suites.</li>
-<li class="flex gap-3"><span class="text-primary font-bold">»</span> Implemented ELK Stack (Elasticsearch, Logstash, Kibana) with APM for centralized logging.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Led incremental migration of legacy services to Red Hat OpenShift using strangler-fig pattern.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Remediated OWASP security vulnerabilities identified by pentesters before every monthly deployment.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> <span class="bg-primary-container/10 px-1 font-bold text-on-surface">Raised code coverage from below 30% to 80%+</span> by integrating JUnit/Mockito test suites.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Built centralized observability from scratch: ELK Stack with APM for log correlation and distributed tracing.</li>
 </ul>
 <div class="flex flex-wrap gap-2 mt-6">
-<span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">Quarkus</span><span class="tech-tag">OpenShift</span><span class="tech-tag">Kafka</span><span class="tech-tag">ELK Stack</span>
+<span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">Quarkus</span><span class="tech-tag">OpenShift</span><span class="tech-tag">Kafka</span><span class="tech-tag">AWS MSK</span><span class="tech-tag">AWS S3</span><span class="tech-tag">ELK Stack</span>
 </div>
 </div>
 </div>
 <!-- Lime Commerce -->
 <div class="grid md:grid-cols-4 gap-8">
 <div class="md:col-span-1">
-<span class="font-label-mono text-secondary">2020 - 2023</span>
+<span class="font-label-mono text-secondary">Jun 2020 - Nov 2023</span>
 <h4 class="font-bold mt-2 uppercase tracking-wide">Full-Stack Developer</h4>
-<p class="text-primary text-sm font-bold mt-1">LIME COMMERCE (REMOTE US)</p>
+<p class="text-primary text-sm font-bold mt-1">LIME COMMERCE (Remote US Client)</p>
 </div>
 <div class="md:col-span-3 border-l border-border-subtle pl-6 md:pl-12">
 <ul class="space-y-4 text-on-surface-variant leading-relaxed">
 <li class="flex gap-3"><span class="text-primary font-bold">»</span> Sole developer for Bramble Company (US-based), working fully independently across 6-hour TZ gap.</li>
-<li class="flex gap-3"><span class="text-primary font-bold">»</span> <span class="bg-primary-container/10 px-1 font-bold text-on-surface">Improved PageSpeed score from 35 to 90+</span> through intensive asset optimization.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> <span class="bg-primary-container/10 px-1 font-bold text-on-surface">Improved PageSpeed score from below 35 to 90+</span> through intensive asset optimization.</li>
 <li class="flex gap-3"><span class="text-primary font-bold">»</span> Migrated production Magento 1 store to Magento 2, including data and custom extension porting.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Built and customized 10+ Magento 2 extensions across the full e-commerce stack.</li>
 </ul>
 <div class="flex flex-wrap gap-2 mt-6">
 <span class="tech-tag">PHP</span><span class="tech-tag">Magento 2</span><span class="tech-tag">Linux</span><span class="tech-tag">MySQL</span><span class="tech-tag">REST APIs</span>
 </div>
 </div>
 </div>
+<!-- DOT Indonesia -->
+<div class="grid md:grid-cols-4 gap-8">
+<div class="md:col-span-1">
+<span class="font-label-mono text-secondary">Jul 2019 - Apr 2020</span>
+<h4 class="font-bold mt-2 uppercase tracking-wide">Backend Developer</h4>
+<p class="text-primary text-sm font-bold mt-1">DOT INDONESIA</p>
+</div>
+<div class="md:col-span-3 border-l border-border-subtle pl-6 md:pl-12">
+<ul class="space-y-4 text-on-surface-variant leading-relaxed">
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Built RESTful APIs for OSVAS (One Space Canvas), a real estate discovery platform.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Developed applications using PHP, Laravel, and Laravel Nova within an Agile environment.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Integrated with frontend teams via a DevOps-managed CI/CD pipeline.</li>
+</ul>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="tech-tag">PHP</span><span class="tech-tag">Laravel</span><span class="tech-tag">Laravel Nova</span><span class="tech-tag">MySQL</span><span class="tech-tag">REST APIs</span><span class="tech-tag">CI/CD</span>
+</div>
+</div>
+</div>
 <!-- Aero Systems -->
 <div class="grid md:grid-cols-4 gap-8">
 <div class="md:col-span-1">
-<span class="font-label-mono text-secondary">2018 - 2019</span>
+<span class="font-label-mono text-secondary">Jul 2018 - Jul 2019</span>
 <h4 class="font-bold mt-2 uppercase tracking-wide">Software Engineer</h4>
 <p class="text-primary text-sm font-bold mt-1">PT. AERO SYSTEMS INDONESIA</p>
 </div>
@@ -380,7 +468,7 @@
 <div class="md:col-span-3 border-l border-border-subtle pl-6 md:pl-12">
 <h4 class="font-headline-md text-xl font-bold mb-2">Computer Science</h4>
 <p class="text-on-surface-variant leading-relaxed">
-                                Focused on software engineering, distributed systems, and backend architecture. Graduated with honors, applying theoretical concepts to real-world cloud infrastructures.
+                                Studied software engineering, distributed systems, and backend architecture. Applied theoretical knowledge to real-world projects during academic years.
                             </p>
 </div>
 </div>
@@ -394,7 +482,7 @@
 <div class="md:col-span-3 border-l border-border-subtle pl-6 md:pl-12">
 <h4 class="font-headline-md text-xl font-bold mb-2">Vocational High School</h4>
 <p class="text-on-surface-variant leading-relaxed">
-                                Specialized in software development fundamentals, networking, and early systems administration. Won several regional programming competitions during tenure.
+                                Specialized in software development fundamentals, networking, and early systems administration. Built a strong foundation in programming and problem-solving.
                             </p>
 </div>
 </div>
@@ -417,16 +505,16 @@
 </div>
 <div class="p-8 flex flex-col flex-grow">
 <h3 class="font-headline-md text-headline-md mb-3">Job Prep Assistant</h3>
-<p class="text-on-surface-variant text-sm flex-grow mb-6">AI-powered job analyzer with 100% line coverage and multi-provider LLM support. Implements SSRF protection.</p>
+<p class="text-on-surface-variant text-sm flex-grow mb-6">AI-powered job analyzer with multi-provider LLM orchestration, SSRF protection, and NDJSON streaming. Built with comprehensive testing using Vitest and Zod validation.</p>
 <div class="flex flex-wrap gap-2 mb-6">
-<span class="tech-tag">Next.js</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Vercel AI</span>
+<span class="tech-tag">Next.js 16</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Vercel AI SDK</span><span class="tech-tag">Vitest</span><span class="tech-tag">Zod</span>
 </div>
 <div class="flex flex-wrap gap-4 mt-auto">
 <a class="text-primary font-bold text-sm flex items-center gap-2 hover:underline" href="https://job-preparation-ahmaddimas-projects.vercel.app/" target="_blank">
                                 Live Demo 
                                 <svg class="lucide lucide-external-link" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
 </a>
-<a class="text-secondary font-bold text-sm flex items-center gap-2 hover:text-primary transition-colors" href="https://github.com/ahmaddimas" target="_blank">
+<a class="text-secondary font-bold text-sm flex items-center gap-2 hover:text-primary transition-colors" href="https://github.com/ahmaddimas/job-preparation" target="_blank">
 <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
                                 View Repository
                             </a>
@@ -439,10 +527,10 @@
 <img alt="URL Shortener" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK69qD3cBilLPVOKSSGbVd9RI8Qu4y2UZ1ciHZ1oZe_UQNR_F5S_VUnMBWkSzDfN-AysTgCtPUjyVSlUYrqjwn-qopWm2SFzDR7cysX2lKDIPmdBdrWBG4bx0RPp0VT1oj9VEIGmJW7WWPWEVGFDpMJLuUgnG4DvvPDiY8R0fX2OZvKt7oKiqbru9rQG-Sj4Y9nyOj1_pvuzGURw8f-PFFtFN7UbMt3704XC-P3I7VX1KJ4X1Q3AUouMxwoopTmRE6wTq9QBGeuPrT">
 </div>
 <div class="p-8 flex flex-col flex-grow">
-<h3 class="font-headline-md text-headline-md mb-3">Backend URL Engine</h3>
-<p class="text-on-surface-variant text-sm flex-grow mb-6">Production-quality Java 25 service with Redis-backed caching, rate limiting, and observability dashboards.</p>
+<h3 class="font-headline-md text-headline-md mb-3">URL Shortener</h3>
+<p class="text-on-surface-variant text-sm flex-grow mb-6">Production-quality Java 25 service with Redis caching, rate limiting (Bucket4j), and observability (Prometheus + Grafana). Database migrations via Flyway, containerized with Docker Compose.</p>
 <div class="flex flex-wrap gap-2 mb-6">
-<span class="tech-tag">Java 25</span><span class="tech-tag">Spring Boot 4</span><span class="tech-tag">Redis</span>
+<span class="tech-tag">Java 25</span><span class="tech-tag">Spring Boot 4</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Redis</span><span class="tech-tag">Flyway</span><span class="tech-tag">Docker</span>
 </div>
 <div class="flex flex-wrap gap-4 mt-auto">
 <a class="text-primary font-bold text-sm flex items-center gap-2 hover:underline" href="https://github.com/ahmaddimas/urlshortener" target="_blank">
@@ -459,9 +547,9 @@
 </div>
 <div class="p-8 flex flex-col flex-grow">
 <h3 class="font-headline-md text-headline-md mb-3">Bramble B2B</h3>
-<p class="text-on-surface-variant text-sm flex-grow mb-6">US-based custom furniture platform. Optimized performance from 35 to 90+ PageSpeed. Sole developer role.</p>
+<p class="text-on-surface-variant text-sm flex-grow mb-6">US-based custom furniture wholesaler (Wisconsin). Migrated Magento 1 to 2, built 10+ custom extensions, optimized PageSpeed from 35 to 90+. Sole developer for 3.5 years.</p>
 <div class="flex flex-wrap gap-2 mb-6">
-<span class="tech-tag">Magento 2</span><span class="tech-tag">PHP</span><span class="tech-tag">Linux Ops</span>
+<span class="tech-tag">Magento 2</span><span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span><span class="tech-tag">Linux</span><span class="tech-tag">Redis</span>
 </div>
 <div class="flex flex-wrap gap-4 mt-auto">
 <a class="text-primary font-bold text-sm flex items-center gap-2 hover:underline" href="https://brambleco.com" target="_blank">
@@ -477,44 +565,87 @@
 </div>
 </div>
 <div class="grid md:grid-cols-3 gap-gutter mt-gutter hidden" id="more-projects">
-<!-- Additional Projects -->
+<!-- Distributed Systems Lab -->
 <div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all flex flex-col h-full group">
-<h3 class="font-headline-md text-headline-md mb-3">AMALA Loyalty</h3>
-<p class="text-on-surface-variant text-sm mb-6">Enterprise loyalty platform for Garuda Indonesia &amp; Citilink. Built with Apache Camel and Spring Boot.</p>
+<h3 class="font-headline-md text-headline-md mb-3">Distributed Systems Lab</h3>
+<p class="text-on-surface-variant text-sm mb-6">Hands-on learning experiments covering Saga pattern, DDD, Kafka, Redis, circuit breakers, load testing with k6, and graceful degradation. A personal learning project.</p>
 <div class="flex flex-wrap gap-2 mt-auto mb-6">
-<span class="tech-tag">Java</span><span class="tech-tag">Apache Camel</span><span class="tech-tag">Kubernetes</span>
+<span class="tech-tag">Java 25</span><span class="tech-tag">Spring Boot 4</span><span class="tech-tag">Kafka</span><span class="tech-tag">Redis</span><span class="tech-tag">k6</span>
 </div>
 <div class="flex flex-wrap gap-4">
-<a class="text-secondary font-bold text-sm flex items-center gap-2 hover:text-primary transition-colors" href="https://github.com/ahmaddimas" target="_blank">
+<span class="text-xs font-bold text-secondary border border-secondary px-2 py-1">LEARNING PROJECT</span>
+</div>
+</div>
+<!-- Instagram OpenAI Bot -->
+<div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all flex flex-col h-full group">
+<h3 class="font-headline-md text-headline-md mb-3">Instagram OpenAI Bot</h3>
+<p class="text-on-surface-variant text-sm mb-6">Auto-reply comment bot integrated with GPT-3.5 from OpenAI. A practical exploration of AI API integration and social media automation.</p>
+<div class="flex flex-wrap gap-2 mt-auto mb-6">
+<span class="tech-tag">Python</span><span class="tech-tag">OpenAI</span><span class="tech-tag">Instagram API</span>
+</div>
+<div class="flex flex-wrap gap-4">
+<a class="text-secondary font-bold text-sm flex items-center gap-2 hover:text-primary transition-colors" href="https://github.com/ahmaddimas/instagram-openai-autoreply" target="_blank">
 <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
                             View Repository
                         </a>
 </div>
 </div>
-<div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all flex flex-col h-full group">
-<h3 class="font-headline-md text-headline-md mb-3">OSVAS Platform</h3>
-<p class="text-on-surface-variant text-sm mb-6">Real estate discovery platform with high-quality property listing engines and REST API integration.</p>
-<div class="flex flex-wrap gap-2 mt-auto mb-6">
-<span class="tech-tag">PHP</span><span class="tech-tag">Laravel</span><span class="tech-tag">Nova</span>
-</div>
-<div class="flex flex-wrap gap-4">
-<a class="text-secondary font-bold text-sm flex items-center gap-2 hover:text-primary transition-colors" href="https://github.com/ahmaddimas" target="_blank">
-<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
-                            View Repository
-                        </a>
-</div>
-</div>
+<!-- Java Pitfalls Demo -->
 <div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all flex flex-col h-full group">
 <h3 class="font-headline-md text-headline-md mb-3">Java Pitfalls Demo</h3>
-<p class="text-on-surface-variant text-sm mb-6">Educational repository demonstrating common Spring/Java anti-patterns and production-ready solutions.</p>
+<p class="text-on-surface-variant text-sm mb-6">Educational repository demonstrating N+1 queries, DTO pattern, constructor injection, and @Transactional best practices with side-by-side bad vs good examples.</p>
 <div class="flex flex-wrap gap-2 mt-auto mb-6">
-<span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span>
+<span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">JPA</span>
 </div>
 <div class="flex flex-wrap gap-4">
-<a class="text-secondary font-bold text-sm flex items-center gap-2 hover:text-primary transition-colors" href="https://github.com/ahmaddimas" target="_blank">
+<a class="text-secondary font-bold text-sm flex items-center gap-2 hover:text-primary transition-colors" href="https://github.com/ahmaddimas/spring-java-pitfalls-demo" target="_blank">
 <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
                             View Repository
                         </a>
+</div>
+</div>
+<!-- Perfect Solution -->
+<div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all flex flex-col h-full group">
+<h3 class="font-headline-md text-headline-md mb-3">Perfect Solution</h3>
+<p class="text-on-surface-variant text-sm mb-6">Insurance salestool app for selling AXA Mandiri products. Microservices architecture with Spring Boot, API Gateway, service discovery, and digital document processing.</p>
+<div class="flex flex-wrap gap-2 mt-auto mb-6">
+<span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">Spring Cloud</span><span class="tech-tag">OpenShift</span>
+</div>
+<div class="flex flex-wrap gap-4">
+<span class="text-xs font-bold text-error border border-error px-2 py-1">CONFIDENTIAL</span>
+</div>
+</div>
+<!-- ePerformance -->
+<div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all flex flex-col h-full group">
+<h3 class="font-headline-md text-headline-md mb-3">ePerformance</h3>
+<p class="text-on-surface-variant text-sm mb-6">Government performance assessment system for Kemenkeu RI. Backend services for employee evaluation, reporting, and HRIS integration.</p>
+<div class="flex flex-wrap gap-2 mt-auto mb-6">
+<span class="tech-tag">C#</span><span class="tech-tag">.NET Core</span><span class="tech-tag">Microservices</span>
+</div>
+<div class="flex flex-wrap gap-4">
+<span class="text-xs font-bold text-error border border-error px-2 py-1">CONFIDENTIAL</span>
+</div>
+</div>
+<!-- AMALA Loyalty -->
+<div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all flex flex-col h-full group">
+<h3 class="font-headline-md text-headline-md mb-3">AMALA Loyalty</h3>
+<p class="text-on-surface-variant text-sm mb-6">Enterprise loyalty platform for Garuda Indonesia &amp; Citilink. Apache Camel workflow automation, Docker/Kubernetes deployment, serving millions of passengers.</p>
+<div class="flex flex-wrap gap-2 mt-auto mb-6">
+<span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">Apache Camel</span><span class="tech-tag">Docker</span><span class="tech-tag">Kubernetes</span>
+</div>
+<div class="flex flex-wrap gap-4">
+<span class="text-xs font-bold text-error border border-error px-2 py-1">CONFIDENTIAL</span>
+</div>
+</div>
+<!-- OSVAS Platform -->
+<div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all flex flex-col h-full group">
+<h3 class="font-headline-md text-headline-md mb-3">OSVAS Platform</h3>
+<p class="text-on-surface-variant text-sm mb-6">Real estate discovery platform with high-quality property listings. Laravel Nova admin panel, RESTful APIs, and DevOps-managed CI/CD pipeline.</p>
+<div class="flex flex-wrap gap-2 mt-auto mb-6">
+<span class="tech-tag">PHP</span><span class="tech-tag">Laravel</span><span class="tech-tag">Laravel Nova</span><span class="tech-tag">MySQL</span><span class="tech-tag">REST APIs</span>
+</div>
+<div class="flex flex-wrap gap-4">
+<span class="text-xs font-bold text-error border border-error px-2 py-1">CONFIDENTIAL</span>
 </div>
 </div>
 </div>
@@ -535,41 +666,46 @@
 <div class="md:col-span-8">
 <div class="grid md:grid-cols-2 gap-12">
 <div>
-<h3 class="font-label-mono text-primary border-b border-outline-variant pb-2 mb-6 uppercase tracking-widest text-xs font-bold">Languages</h3>
+<h3 class="font-label-mono text-primary border-b border-outline-variant pb-2 mb-6 uppercase tracking-widest text-xs font-bold">Languages & Runtimes</h3>
 <ul class="space-y-3">
 <li class="flex justify-between items-center"><span class="font-bold">Java (7+ Years)</span>
-<svg class="lucide lucide-check-circle-2 text-primary" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+<span class="text-secondary text-sm">Proficient</span>
 </li>
-<li class="flex justify-between items-center"><span class="">PHP (3+ Years)</span> <span class="text-secondary text-sm">Expert</span></li>
-<li class="flex justify-between items-center"><span class="">C# / .NET Core</span> <span class="text-secondary text-sm">Senior</span></li>
-<li class="flex justify-between items-center"><span class="">JavaScript / Node.js</span> <span class="text-secondary text-sm">Advanced</span></li>
-<li class="flex justify-between items-center"><span class="">Go / Python</span> <span class="text-secondary text-sm">Advanced</span></li>
+<li class="flex justify-between items-center"><span class="">PHP (3+ Years)</span> <span class="text-secondary text-sm">Proficient</span></li>
+<li class="flex justify-between items-center"><span class="">TypeScript</span> <span class="text-secondary text-sm">Familiar</span></li>
+<li class="flex justify-between items-center"><span class="">C# / .NET Core</span> <span class="text-secondary text-sm">Familiar</span></li>
+<li class="flex justify-between items-center"><span class="">Go / Python</span> <span class="text-secondary text-sm">Learning</span></li>
 </ul>
 </div>
 <div>
-<h3 class="font-label-mono text-primary border-b border-outline-variant pb-2 mb-6 uppercase tracking-widest text-xs font-bold">Frameworks</h3>
+<h3 class="font-label-mono text-primary border-b border-outline-variant pb-2 mb-6 uppercase tracking-widest text-xs font-bold">Frameworks & Platforms</h3>
 <ul class="space-y-3">
-<li class="flex justify-between items-center"><span class="font-bold">Spring Boot / Cloud</span> <span class="text-secondary text-sm">Core</span></li>
-<li class="flex justify-between items-center"><span class="">Quarkus</span> <span class="text-secondary text-sm">Expert</span></li>
-<li class="flex justify-between items-center"><span class="">Apache Camel</span> <span class="text-secondary text-sm">Senior</span></li>
-<li class="flex justify-between items-center"><span class="">Laravel / Magento 2</span> <span class="text-secondary text-sm">Senior</span></li>
+<li class="flex justify-between items-center"><span class="font-bold">Spring Boot / Cloud</span> <span class="text-secondary text-sm">Proficient</span></li>
+<li class="flex justify-between items-center"><span class="">Quarkus</span> <span class="text-secondary text-sm">Familiar</span></li>
+<li class="flex justify-between items-center"><span class="">Next.js / React</span> <span class="text-secondary text-sm">Familiar</span></li>
+<li class="flex justify-between items-center"><span class="">Apache Camel</span> <span class="text-secondary text-sm">Familiar</span></li>
+<li class="flex justify-between items-center"><span class="">Laravel / Magento 2</span> <span class="text-secondary text-sm">Proficient</span></li>
+<li class="flex justify-between items-center"><span class="">NestJS</span> <span class="text-secondary text-sm">Learning</span></li>
 </ul>
 </div>
 <div>
-<h3 class="font-label-mono text-primary border-b border-outline-variant pb-2 mb-6 uppercase tracking-widest text-xs font-bold">Infrastructure</h3>
+<h3 class="font-label-mono text-primary border-b border-outline-variant pb-2 mb-6 uppercase tracking-widest text-xs font-bold">Data & Infrastructure</h3>
 <ul class="space-y-3">
-<li class="flex justify-between items-center"><span class="">Docker / K8s / OpenShift</span> <span class="text-secondary text-sm">Expert</span></li>
-<li class="flex justify-between items-center"><span class="">PostgreSQL / MS SQL</span> <span class="text-secondary text-sm">Senior</span></li>
-<li class="flex justify-between items-center"><span class="">Redis / MongoDB</span> <span class="text-secondary text-sm">Senior</span></li>
-<li class="flex justify-between items-center"><span class="">Linux / CI-CD</span> <span class="text-secondary text-sm">Senior</span></li>
+<li class="flex justify-between items-center"><span class="font-bold">PostgreSQL / MySQL</span> <span class="text-secondary text-sm">Proficient</span></li>
+<li class="flex justify-between items-center"><span class="">Redis / MongoDB</span> <span class="text-secondary text-sm">Familiar</span></li>
+<li class="flex justify-between items-center"><span class="">Docker / OpenShift</span> <span class="text-secondary text-sm">Familiar</span></li>
+<li class="flex justify-between items-center"><span class="">Kafka / AWS MSK</span> <span class="text-secondary text-sm">Familiar</span></li>
+<li class="flex justify-between items-center"><span class="">Linux / CI-CD</span> <span class="text-secondary text-sm">Familiar</span></li>
 </ul>
 </div>
 <div>
-<h3 class="font-label-mono text-primary border-b border-outline-variant pb-2 mb-6 uppercase tracking-widest text-xs font-bold">Observability</h3>
+<h3 class="font-label-mono text-primary border-b border-outline-variant pb-2 mb-6 uppercase tracking-widest text-xs font-bold">Observability & Security</h3>
 <ul class="space-y-3">
-<li class="flex justify-between items-center"><span class="">ELK Stack / APM</span> <span class="text-secondary text-sm">Expert</span></li>
-<li class="flex justify-between items-center"><span class="">Kafka</span> <span class="text-secondary text-sm">Expert</span></li>
-<li class="flex justify-between items-center"><span class="">Prometheus / Grafana</span> <span class="text-secondary text-sm">Senior</span></li>
+<li class="flex justify-between items-center"><span class="font-bold">ELK Stack</span> <span class="text-secondary text-sm">Proficient</span></li>
+<li class="flex justify-between items-center"><span class="">Prometheus / Grafana</span> <span class="text-secondary text-sm">Familiar</span></li>
+<li class="flex justify-between items-center"><span class="">OpenTelemetry</span> <span class="text-secondary text-sm">Learning</span></li>
+<li class="flex justify-between items-center"><span class="">JWT / OAuth2</span> <span class="text-secondary text-sm">Familiar</span></li>
+<li class="flex justify-between items-center"><span class="">Resilience4j</span> <span class="text-secondary text-sm">Familiar</span></li>
 </ul>
 </div>
 </div>
@@ -615,7 +751,7 @@
 <section class="py-12 bg-surface-container-low/50 backdrop-blur-sm reveal active">
 <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
 <h3 class="font-label-mono text-primary border-b border-outline-variant pb-2 mb-8 uppercase tracking-widest text-center text-xs font-bold shuffle-target" data-shuffled="true">ENGINEERING PRINCIPLES</h3>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
 <div class="p-6 border border-border-subtle bg-white/80 text-center hover:border-primary transition-all flex flex-col items-center">
 <svg class="lucide lucide-check-circle text-primary mb-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
 <span class="font-bold text-sm">SOLID / OOP</span>
@@ -632,14 +768,53 @@
 <svg class="lucide lucide-bug text-primary mb-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><rect height="14" rx="4" width="8" x="8" y="6"></rect><path d="m19 7-3 2"></path><path d="m5 7 3 2"></path><path d="m19 19-3-2"></path><path d="m5 19 3-2"></path><path d="M20 13h-4"></path><path d="M4 13h4"></path><path d="m10 4 1 2"></path><path d="m14 4-1 2"></path></svg>
 <span class="font-bold text-sm">TDD / CI-CD</span>
 </div>
+<div class="p-6 border border-border-subtle bg-white/80 text-center hover:border-primary transition-all flex flex-col items-center">
+<svg class="lucide lucide-git-branch text-primary mb-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><line x1="6" x2="6" y1="3" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>
+<span class="font-bold text-sm">Strangler-Fig Pattern</span>
+</div>
+<div class="p-6 border border-border-subtle bg-white/80 text-center hover:border-primary transition-all flex flex-col items-center">
+<svg class="lucide lucide-shield text-primary mb-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+<span class="font-bold text-sm">OWASP / Security</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Services -->
+<section class="py-24 bg-surface-container-low/50 backdrop-blur-sm reveal border-t border-border-subtle active">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-16 text-center">
+<h3 class="font-label-mono text-primary border-b border-outline-variant pb-2 mb-8 uppercase tracking-widest text-center text-xs font-bold shuffle-target" data-shuffled="true">Services</h3>
+<p class="text-secondary text-body-lg max-w-2xl mx-auto">Available for freelance and consulting engagements across the full software development lifecycle.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="p-6 border border-border-subtle bg-white text-center hover:border-primary transition-all">
+<svg class="lucide lucide-code text-primary mb-3 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+<h4 class="font-bold text-sm mb-2">Custom Software</h4>
+<p class="text-on-surface-variant text-xs">Backend systems, APIs, and microservices built to spec.</p>
+</div>
+<div class="p-6 border border-border-subtle bg-white text-center hover:border-primary transition-all">
+<svg class="lucide lucide-cloud text-primary mb-3 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 19c3.037 0 5.5-2.463 5.5-5.5 0-2.97-2.354-5.382-5.29-5.49A7.001 7.001 0 0 0 5 10c-2.732 0-4.987 2.178-5.05 4.91A4.5 4.5 0 0 0 4.5 19z"></path></svg>
+<h4 class="font-bold text-sm mb-2">SaaS Development</h4>
+<p class="text-on-surface-variant text-xs">Multi-tenant architectures, billing, and scaling strategies.</p>
+</div>
+<div class="p-6 border border-border-subtle bg-white text-center hover:border-primary transition-all">
+<svg class="lucide lucide-refresh-cw text-primary mb-3 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg>
+<h4 class="font-bold text-sm mb-2">Legacy Modernization</h4>
+<p class="text-on-surface-variant text-xs">Strangler-fig migrations, Java upgrades, monolith decomposition.</p>
+</div>
+<div class="p-6 border border-border-subtle bg-white text-center hover:border-primary transition-all">
+<svg class="lucide lucide-shield text-primary mb-3 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+<h4 class="font-bold text-sm mb-2">Security Audits</h4>
+<p class="text-on-surface-variant text-xs">OWASP remediation, vulnerability assessment, and hardening.</p>
+</div>
 </div>
 </div>
 </section>
 <!-- Contact Section -->
 <section class="py-32 bg-white/40 backdrop-blur-sm reveal active" id="contact">
 <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center">
-<h2 class="font-display-lg text-4xl md:text-display-lg mb-8 shuffle-target" data-shuffled="true">Ready to Scale Your Infrastructure?</h2>
-<p class="text-secondary text-body-lg max-w-2xl mx-auto mb-12">Currently open to senior backend or infrastructure roles within remote-first organizations. Available for full-time or high-impact consulting.</p>
+<h2 class="font-display-lg text-4xl md:text-display-lg mb-8 shuffle-target" data-shuffled="true">Let's Build Something Together</h2>
+<p class="text-secondary text-body-lg max-w-2xl mx-auto mb-12">Currently open to backend engineering roles, freelance contracts, and consulting. I enjoy working on microservices, legacy modernization, and systems that teams can actually maintain.</p>
 <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
 <a class="w-full md:w-auto bg-primary text-on-primary px-12 py-5 rounded-lg font-bold flex items-center justify-center gap-3 hover:scale-105 transition-transform" href="mailto:ahmaddimas18@gmail.com">
 <svg class="lucide lucide-mail" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><rect height="16" rx="2" width="20" x="2" y="4"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
@@ -657,7 +832,7 @@
 <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter text-center md:text-left">
 <div class="flex flex-col items-center md:items-start">
 <span class="font-label-mono text-label-mono text-on-surface font-bold uppercase mb-2">Ahmad Dimas</span>
-<p class="text-secondary font-body-md text-sm">© 2024 Ahmad Dimas. Built for performance and longevity.</p>
+<p class="text-secondary font-body-md text-sm">© 2025 Ahmad Dimas. Built for performance and longevity.</p>
 </div>
 <div class="flex gap-8">
 <a class="text-secondary font-body-md hover:text-primary transition-all duration-300 underline underline-offset-4" href="mailto:ahmaddimas18@gmail.com"><svg class="lucide lucide-mail inline-block mr-2" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><rect height="16" rx="2" width="20" x="2" y="4"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>Email</a>
@@ -752,7 +927,7 @@
         }
 
         // Typewriter Animation
-        const roles = ['Senior Backend Engineer', 'Infrastructure Specialist', 'Remote Collaboration Expert'];
+        const roles = ['Backend Engineer', 'Microservices Developer', 'Remote-Ready Professional'];
         let roleIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
