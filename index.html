@@ -1,983 +1,849 @@
-<!DOCTYPE html>
-<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
-<head>
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Ahmad Dimas - Senior Backend Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,FILL@0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#d9e3f6",
+                        "secondary-container": "#d6e0f3",
+                        "outline": "#737686",
+                        "surface-bright": "#f7f9fb",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "tertiary-container": "#007d55",
+                        "on-surface": "#191c1e",
+                        "primary": "#004ac6",
+                        "on-secondary-fixed-variant": "#3d4756",
+                        "on-background": "#191c1e",
+                        "border-subtle": "#e2e8f0",
+                        "on-tertiary-container": "#bdffdb",
+                        "secondary": "#555f6f",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary-container": "#596373",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "inverse-surface": "#2d3133",
+                        "on-surface-variant": "#434655",
+                        "primary-container": "#2563eb",
+                        "tertiary": "#006242",
+                        "on-error-container": "#93000a",
+                        "background": "#f7f9fb",
+                        "surface-muted": "#f1f5f9",
+                        "on-tertiary-fixed": "#002113",
+                        "surface-container-low": "#f2f4f6",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-fixed": "#121c2a",
+                        "text-dimmed": "#64748b",
+                        "secondary-fixed-dim": "#bdc7d9",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-tint": "#0053db",
+                        "on-primary-container": "#eeefff",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-dim": "#d8dadc",
+                        "tertiary-fixed": "#6ffbbe",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-primary": "#b4c5ff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#00174b",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#dbe1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "max-width": "1200px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "label-mono": ["JetBrains Mono"],
+                        "code-sm": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "code-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .hero-mask {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%), 
+                        linear-gradient(to right, transparent 0%, black 15%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%), 
+                               linear-gradient(to right, transparent 0%, black 15%);
+            mask-composite: intersect;
+            -webkit-mask-composite: source-in;
+        }
 
-   <!--- basic page needs
-   ================================================== -->
-   <meta charset="utf-8">
-	<title>A D A M</title>
-	<meta name="description" content="">  
-	<meta name="author" content="">
+        .typewriter::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
 
-   <!-- mobile specific metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
 
- 	<!-- CSS
-   ================================================== -->
-   <link rel="stylesheet" href="css/base.css">  
-   <link rel="stylesheet" href="css/main.css">
-   <link rel="stylesheet" href="css/vendor.css">     
+        /* Float Animation for Hero Portrait */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-anim {
+            animation: float 6s ease-in-out infinite;
+        }
 
-   <!-- script
-   ================================================== -->   
-	<script src="js/modernizr.js"></script>
-	<script src="js/pace.min.js"></script>
+        /* Pulse Animation for CTA */
+        @keyframes hire-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 74, 198, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(0, 74, 198, 0); }
+        }
+        .pulse-cta {
+            animation: hire-pulse 3s infinite;
+        }
 
-   <!-- favicons
-	================================================== -->
-	<link rel="icon" type="image/png" href="favicon.png">
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
 
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tech-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            padding: 2px 8px;
+            border: 1px solid #e2e8f0;
+            background: #f8fafc;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Shuffling text class */
+        .shuffle-text {
+            display: inline-block;
+        }
+
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
 </head>
-
-<body id="top">
-
-	<!-- header 
-   ================================================== -->
-   <header>   	
-   	<div class="row">
-
-   		<div class="top-bar">
-   			<a class="menu-toggle" href="#"><span>Menu</span></a>
-
-	   		<div class="logo">
-		         <a href="index.html">ADAM</a>
-		      </div>		      
-
-		   	<nav id="main-nav-wrap">
-					<ul class="main-navigation">
-						<li class="current"><a class="smoothscroll"  href="#intro" title="">Home</a></li>
-						<li><a class="smoothscroll"  href="#about" title="">About</a></li>
-						<li><a class="smoothscroll"  href="#resume" title="">Resume</a></li>
-						<li><a class="smoothscroll"  href="#portfolio" title="">Portfolio</a></li>
-						<li><a class="smoothscroll"  href="#services" title="">Services</a></li>					
-						<li><a class="smoothscroll"  href="#contact" title="">Contact</a></li>				
-					</ul>
-				</nav>    		
-   		</div> <!-- /top-bar --> 
-   		
-   	</div> <!-- /row --> 		
-   </header> <!-- /header -->
-
-	<!-- intro section
-   ================================================== -->
-   <section id="intro">   
-
-   	<div class="intro-overlay"></div>	
-
-   	<div class="intro-content">
-   		<div class="row">
-
-   			<div class="col-twelve">
-
-	   			<h5>Hello, World.</h5>
-	   			<h1>I'm Dimas.</h1>
-
-	   			<p class="intro-position">
-					<span>Software Engineer</span>
-	   				<span>Back-end Developer</span>
-	   			</p>
-
-	   			<a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
-
-	   		</div>  
-   			
-   		</div>   		 		
-   	</div> <!-- /intro-content --> 
-
-   	<ul class="intro-social">        
-         <!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-         <li><a href="#"><i class="fa fa-behance"></i></a></li>
-         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-         <li><a href="#"><i class="fa fa-dribbble"></i></a></li> -->
-         <li><a href="http://instagram.com/ahmad.muttaqi"><i class="fa fa-instagram"></i></a></li>
-      </ul> <!-- /intro-social -->      	
-
-   </section> <!-- /intro -->
-
-
-   <!-- about section
-   ================================================== -->
-   <section id="about">  
-
-   	<div class="row section-intro">
-   		<div class="col-twelve">
-
-   			<h5>About</h5>
-   			<h1>Let me introduce myself.</h1>
-
-   			<div class="intro-info">
-
-   				<img src="images/profile-pic.jpg" alt="Profile Picture">
-
-   				<p class="lead">Lorem ipsum Exercitation culpa qui dolor consequat exercitation fugiat laborum ex ea eiusmod ad do aliqua occaecat nisi ad irure sunt id pariatur Duis laboris amet exercitation veniam labore consectetur ea id quis eiusmod.</p>
-   			</div>   			
-
-   		</div>   		
-   	</div> <!-- /section-intro -->
-
-   	<div class="row about-content">
-
-   		<div class="col-six tab-full">
-
-   			<h3>Profile</h3>
-   			<p>Lorem ipsum Qui veniam ut consequat ex ullamco nulla in non ut esse in magna sint minim officia consectetur nisi commodo ea magna pariatur nisi cillum.</p>
-
-   			<ul class="info-list">
-   				<li>
-   					<strong>Fullname:</strong>
-   					<span>Ahmad Dimas Abid Muttaqi</span>
-   				</li>
-   				<li>
-   					<strong>Birth Date:</strong>
-   					<span>October 27, 1982</span>
-   				</li>
-   				<li>
-   					<strong>Job:</strong>
-   					<span>Software Engineer, Backend Developer</span>
-   				</li>
-   				<li>
-   					<strong>Website:</strong>
-   					<span>ahmaddimas.io</span>
-   				</li>
-   				<li>
-   					<strong>Email:</strong>
-   					<span>ahmaddimas18@gmail.com</span>
-   				</li>
-
-   			</ul> <!-- /info-list -->
-
-   		</div>
-
-   		<div class="col-six tab-full">
-
-   			<h3>Skills</h3>
-   			<p>Lorem ipsum Qui veniam ut consequat ex ullamco nulla in non ut esse in magna sint minim officia consectetur nisi commodo ea magna pariatur nisi cillum.</p>
-
-				<ul class="skill-bars">
-				   <li>
-				   	<div class="progress percent90"><span>90%</span></div>
-				   	<strong>Java</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent85"><span>85%</span></div>
-				   	<strong>PHP</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent70"><span>70%</span></div>
-				   	<strong>Javascript</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent95"><span>95%</span></div>
-				   	<strong>Python</strong>
-				   </li>
-				   <li>
-
-				   	<div class="progress percent75"><span>75%</span></div>
-				   	<strong>Go</strong>
-				   </li>
-      
-				</ul> <!-- /skill-bars -->		
-
-   		</div>
-
-   	</div>
-
-   	<div class="row button-section">
-   		<div class="col-twelve">
-   			<a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a>
-   			<a href="#" title="Download CV" class="button button-primary">Download CV</a>
-   		</div>   		
-   	</div>
-
-   </section> <!-- /process-->    
-
-
-   <!-- resume Section
-   ================================================== -->
-	<section id="resume" class="grey-section">
-
-		<div class="row section-intro">
-   		<div class="col-twelve">
-
-   			<h5>Resume</h5>
-   			<h1>More of my credentials.</h1>
-
-   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
-
-   		</div>   		
-   	</div> <!-- /section-intro--> 
-
-   	<div class="row resume-timeline">
-
-   		<div class="col-twelve resume-header">
-
-   			<h2>Work Experience</h2>
-
-   		</div> <!-- /resume-header -->
-
-   		<div class="col-twelve">
-
-   			<div class="timeline-wrap">
-
-   				<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<i class="fa fa-briefcase"></i>
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>Back-end Developer</h3>
-	   					<p>July 2019 - Present</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>DOT Indonesia</h4>
-	   					<p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-	   			<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<i class="fa fa-briefcase"></i>
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>Software Engineer</h3>
-	   					<p>July 2018 - July 2019</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>PT. Aero Systems Indonesia</h4>
-	   					<p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt.</p>
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-   			</div> <!-- /timeline-wrap -->   			
-
-   		</div> <!-- /col-twelve -->
-   		
-   	</div> <!-- /resume-timeline -->
-   	
-   	<div class="row resume-timeline">
-
-   		<div class="col-twelve resume-header">
-
-   			<h2>Education</h2>
-
-   		</div> <!-- /resume-header -->
-
-   		<div class="col-twelve">
-
-   			<div class="timeline-wrap">
-
-   				<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<i class="fa fa-graduation-cap"></i>
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>Bachelor Degree</h3>
-	   					<p>September 2019 - Present</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>Bina Nusantara University</h4>
-	   					<p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-	   			<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<i class="fa fa-graduation-cap"></i>
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>Vocational High School</h3>
-	   					<p>May 2015 - May 2018</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>Telkom School Malang</h4>
-	   					<p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt.</p>
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-	   			<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<i class="fa fa-briefcase"></i>
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>Junior High School</h3>
-	   					<p>May 2012 - May 2015</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>SMPN MT Bojonegoro</h4>
-	   					<p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt.</p>
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-   			</div> <!-- /timeline-wrap -->   			
-
-   		</div> <!-- /col-twelve -->
-   		
-   	</div> <!-- /resume-timeline -->
-		
-	</section> <!-- /features -->
-
-
-	<!-- Portfolio Section
-   ================================================== -->
-	<section id="portfolio">
-
-		<div class="row section-intro">
-   		<div class="col-twelve">
-
-   			<h5>Portfolio</h5>
-   			<h1>Check Out Some of My Works.</h1>
-
-   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
-
-   		</div>   		
-   	</div> <!-- /section-intro--> 
-
-   	<div class="row portfolio-content">
-
-   		<div class="col-twelve">
-
-   			<!-- portfolio-wrapper -->
-	         <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
-
-	         	<div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/liberty.jpg" alt="Liberty">
-	                  <a href="#modal-01" class="overlay">	                  	           
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-		     					       <h3 class="folio-title">Liberty</h3>	     					    
-		     					    	 <span class="folio-types">
-		     					       	  Graphic Design
-		     					       </span>
-		     					   </div>	                      	
-	                     </div>                    
-	                  </a>
-	               </div>	               
-	        		</div> <!-- /folio-item -->
-
-	        		<div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/shutterbug.jpg" alt="Shutterbug">
-	               	<a href="#modal-02" class="overlay">              		                  
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Shutterbug</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Web Design
-		     					      </span>		     		
-		     					   </div> 	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->
-
-	            <div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/clouds.jpg"alt="Clouds">
-	                  <a href="#modal-03" class="overlay">             		                  
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Clouds</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Web Design
-		     					      </span>		     		
-		     					   </div> 	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->
-
-	            <div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/beetle.jpg" alt="Beetle">
-	                  <a href="#modal-04" class="overlay">                  	                 
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Beetle</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Branding
-		     					      </span>		     		
-		     					   </div>  	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->     
-
-	        		<div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/lighthouse.jpg" alt="Lighthouse">
-	                  <a href="#modal-05" class="overlay">             		                  
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Lighthouse</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Web Development
-		     					      </span>		     		
-		     					   </div> 	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->
-
-	            <div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/salad.jpg" alt="Salad">
-	                  <a href="#modal-06" class="overlay">
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Salad</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Branding
-		     					      </span>		     		
-		     					   </div>	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->   
-
-	            <!-- modal popups - begin
-	            ============================================================= -->
-	            <div id="modal-01" class="popup-modal slider mfp-hide">	
-
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/m-liberty.jpg" alt="" />
-				     	</div>      	
-
-					   <div class="description-box">
-					      <h4>Liberty</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-					      <div class="categories">Web Development</div>			               
-					   </div>
-
-			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
-
-				   </div> <!-- /modal-01 -->
-
-				   <div id="modal-02" class="popup-modal slider mfp-hide">	
-
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/m-shutterbug.jpg" alt="" />
-				     	</div>      	
-
-					   <div class="description-box">
-					      <h4>Shutterbug</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-					      <div class="categories">Web Design</div>			               
-					   </div>
-
-			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
-
-				   </div> <!-- /modal-02 -->
-
-				   <div id="modal-03" class="popup-modal slider mfp-hide">	
-
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/m-clouds.jpg" alt="" />
-				     	</div>      	
-
-					   <div class="description-box">
-					      <h4>Clouds</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-					      <div class="categories">Web Design</div>			               
-					   </div>
-
-			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
-
-				   </div> <!-- /modal-03 -->
-
-				   <div id="modal-04" class="popup-modal slider mfp-hide">	
-
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/m-beetle.jpg" alt="" />
-				     	</div>      	
-
-					   <div class="description-box">
-					      <h4>Beetle</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-					      <div class="categories">Branding</div>			               
-					   </div>
-
-			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
-
-				   </div> <!-- /modal-04 -->
-
-				   <div id="modal-05" class="popup-modal slider mfp-hide">	
-
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/m-lighthouse.jpg" alt="" />
-				     	</div>      	
-
-					   <div class="description-box">
-					      <h4>Lighthouse</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-					      <div class="categories">Web Development</div>			               
-					   </div>
-
-			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
-
-				   </div> <!-- /modal-05 -->
-
-				   <div id="modal-06" class="popup-modal slider mfp-hide">	
-
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/m-salad.jpg" alt="" />
-				     	</div>      	
-
-					   <div class="description-box">
-					      <h4>Salad</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-					      <div class="categories">Branding</div>			               
-					   </div>
-
-			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
-
-				   </div> <!-- /modal-06 -->
-
-
-				   <!-- modal popups - end
-	            ============================================================= -->
-
-	         </div> <!-- /portfolio-wrapper --> 
-
-   		</div>  <!-- /twelve -->   
-
-   	</div> <!-- /portfolio-content --> 
-		
-	</section> <!-- /portfolio --> 
-
-	
-	<!-- services Section
-   ================================================== -->
-	<section id="services">
-
-		<div class="overlay"></div>
-
-		<div class="row section-intro">
-   		<div class="col-twelve">
-
-   			<h5>Services</h5>
-   			<h1>What Can I Do For You?</h1>
-
-   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
-
-   		</div>   		
-   	</div> <!-- /section-intro -->
-
-   	<div class="row services-content">
-
-   		<div id="owl-slider" class="owl-carousel services-list">
-
-	      	<div class="service">	
-
-	      		<span class="icon"><i class="icon-earth"></i></span>            
-
-	            <div class="service-content">	
-
-	            	 <h3>Webdesign</h3>
-
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	         		</p>
-	         		
-	         	</div> 	         	 
-
-				</div> <!-- /service -->
-
-				<div class="service">	
-
-					<span class="icon"><i class="icon-window"></i></span>                          
-
-	            <div class="service-content">	
-
-	            	<h3>Web Development</h3>  
-
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	         		</p>
-
-	            </div>	                          
-
-			   </div> <!-- /service -->
-
-			   <div class="service">
-
-			   	<span class="icon"><i class="icon-paint-brush"></i></span>		            
-
-	            <div class="service-content">
-
-	            	<h3>Branding</h3>
-
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	        			</p> 
-
-	            </div> 	            	               
-
-			   </div> <!-- /service -->
-
-				<div class="service">
-
-					<span class="icon"><i class="icon-toggles"></i></span>	              
-
-	            <div class="service-content">
-
-	            	<h3>UI/UX Design</h3>
-
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	         		</p> 
-	         		
-	            </div>                
-
-				</div> <!-- /service -->
-
-			   <div class="service">
-
-			   	<span class="icon"><i class="icon-image"></i></span>	            
-
-	            <div class="service-content">
-
-	            	<h3>Graphics Design</h3>
-
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	        			</p> 
-
-	            </div>	               
-
-			   </div> <!-- /service -->
-
-			   <div class="service">
-
-			   	<span class="icon"><i class="icon-chat"></i></span>	   	           
-
-	            <div class="service-content">
-
-	            	 <h3>Consultancy</h3>
-
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	        			</p> 
-	        			
-	            </div>	               
-
-			   </div> <!-- /service -->
-
-	      </div> <!-- /services-list -->
-   		
-   	</div> <!-- /services-content -->
-		
-	</section> <!-- /services -->	
-
-
-	<!-- stats Section
-   ================================================== -->
-	<section id="stats" class="count-up">
-
-		<div class="row">
-			<div class="col-twelve">
-
-				<div class="block-1-6 block-s-1-3 block-tab-1-2 block-mob-full stats-list">
-
-					<div class="bgrid stat">
-
-						<div class="icon-part">
-							<i class="icon-pencil-ruler"></i>
-						</div>
-
-						<h3 class="stat-count">
-							1500
-						</h3>
-
-						<h5 class="stat-title">
-							Projects Completed
-						</h5>
-
-					</div> <!-- /stat -->					
-
-					<div class="bgrid stat">
-
-						<div class="icon-part">
-							<i class="icon-users"></i>
-						</div>
-
-						<h3 class="stat-count">
-							900
-						</h3>
-
-						<h5 class="stat-title">
-							Happy Clients
-						</h5>
-
-					</div> <!-- /stat -->
-
-					<div class="bgrid stat">
-
-						<div class="icon-part">
-							<i class="icon-badge"></i>
-						</div>
-
-						<h3 class="stat-count">
-							200
-						</h3>
-
-						<h5 class="stat-title">
-							Awards Received
-						</h5>
-
-					</div> <!-- /stat -->									
-
-					<div class="bgrid stat">
-
-						<div class="icon-part">
-							<i class="icon-light-bulb"></i>
-						</div>
-
-						<h3 class="stat-count">
-							120
-						</h3>
-
-						<h5 class="stat-title">
-							Crazy Ideas
-						</h5>
-
-					</div> <!-- /stat -->
-
-					<div class="bgrid stat">
-
-						<div class="icon-part">
-							<i class="icon-cup"></i>
-						</div>
-
-						<h3 class="stat-count">
-							1500
-						</h3>
-
-						<h5 class="stat-title">
-							Coffee Cups
-						</h5>
-
-					</div> <!-- /stat -->
-
-					<div class="bgrid stat">
-
-						<div class="icon-part">
-							<i class="icon-clock"></i>
-						</div>
-
-						<h3 class="stat-count">
-							7200
-						</h3>
-
-						<h5 class="stat-title">
-							Hours
-						</h5>
-
-					</div> <!-- /stat -->
-
-				</div> <!-- /stats-list -->
-
-			</div> <!-- /twelve -->
-		</div> <!-- /row -->
-
-	</section> <!-- /stats -->
-
-	
-   <!-- contact
-   ================================================== -->
-	<section id="contact">
-
-		<div class="row section-intro">
-   		<div class="col-twelve">
-
-   			<h5>Contact</h5>
-   			<h1>I'd Love To Hear From You.</h1>
-
-   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
-
-   		</div> 
-   	</div> <!-- /section-intro -->
-
-   	<div class="row contact-form">
-
-   		<div class="col-twelve">
-
-            <!-- form -->
-            <form name="contactForm" id="contactForm" method="post" action="">
-      			<fieldset>
-
-                  <div class="form-field">
- 						   <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
-                  </div>
-                  <div class="form-field">
-	      			   <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
-	               </div>
-                  <div class="form-field">
-	     				   <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="">
-	               </div>                       
-                  <div class="form-field">
-	                 	<textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
-	               </div>                      
-                 <div class="form-field">
-                     <button class="submitform">Submit</button>
-                     <div id="submit-loader">
-                        <div class="text-loader">Sending...</div>                             
-       				      <div class="s-loader">
-								  	<div class="bounce1"></div>
-								  	<div class="bounce2"></div>
-								  	<div class="bounce3"></div>
-								</div>
-							</div>
-                  </div>
-
-      			</fieldset>
-      		</form> <!-- Form End -->
-
-            <!-- contact-warning -->
-            <div id="message-warning">            	
-            </div>            
-            <!-- contact-success -->
-      		<div id="message-success">
-               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-      		</div>
-
-         </div> <!-- /col-twelve -->
-   		
-   	</div> <!-- /contact-form -->
-
-   	<div class="row contact-info">
-
-   		<div class="col-four tab-full">
-
-   			<div class="icon">
-   				<i class="icon-pin"></i>
-   			</div>
-
-   			<h5>Where to find me</h5>
-
-   			<p>
-            1600 Amphitheatre Parkway<br>
-            Mountain View, CA<br>
-            94043 US
-            </p>
-
-   		</div>
-
-   		<div class="col-four tab-full collapse">
-
-   			<div class="icon">
-   				<i class="icon-mail"></i>
-   			</div>
-
-   			<h5>Email Me At</h5>
-
-   			<p>ahmaddimas18@gmail.com</p>
-
-   		</div>
-
-   		<div class="col-four tab-full">
-
-   			<div class="icon">
-   				<i class="icon-phone"></i>
-   			</div>
-
-   			<h5>Call Me At</h5>
-
-   			<p>Phone: (+63) 555 1212<br>
-			   	Mobile: (+63) 555 0100<br>
-			     	Fax: (+63) 555 0101
-			   </p>
-
-   		</div>
-   		
-   	</div> <!-- /contact-info -->
-		
-	</section> <!-- /contact -->
-
-
-   <!-- footer
-   ================================================== -->
-
-   <footer>
-     	<div class="row">
-
-     		<div class="col-six tab-full pull-right social">
-
-     			<ul class="footer-social">        
-			      <!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-			      <li><a href="#"><i class="fa fa-behance"></i></a></li>
-			      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-			      <li><a href="#"><i class="fa fa-dribbble"></i></a></li> -->
-			      <li><a href="http://instagram.com/ahmad.muttaqi"><i class="fa fa-instagram"></i></a></li>
-			   </ul> 
-	      		
-	      </div>
-
-      	<div class="col-eight tab-full">
-	      	<div class="copyright">
-		        	<span>© Copyright 2018 </span> 
-		        	<span>Design by <a href="http://www.styleshout.com/">styleshout</a></span> 
-		        	<span>Distributed by <a href="https://themewagon.com/">themewagon</a></span>	         	
-		         </div>		                  
-	      	</div>
-
-	      	<div id="go-top">
-		         <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
-		      </div>
-
-      	</div> <!-- /row -->     	
-   </footer>  
-
-   <div id="preloader"> 
-    	<div id="loader"></div>
-   </div> 
-
-   <!-- Java Script
-   ================================================== --> 
-   <script src="js/jquery-2.1.3.min.js"></script>
-   <script src="js/plugins.js"></script>
-   <script src="js/main.js"></script>
-
-</body>
-
-</html>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<canvas id="bg-canvas" width="1280" height="6391"></canvas>
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-border-subtle h-16 flex items-center" id="navbar">
+<div class="max-w-max-width mx-auto w-full px-margin-mobile md:px-margin-desktop flex justify-between items-center">
+<span class="font-headline-md text-[20px] md:text-headline-md font-bold text-on-surface">Ahmad Dimas</span>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-secondary hover:text-primary transition-colors" href="#experience">Experience</a>
+<a class="font-body-md text-secondary hover:text-primary transition-colors" href="#projects">Projects</a>
+<a class="font-body-md text-secondary hover:text-primary transition-colors" href="#skills">Skills</a>
+<a class="font-body-md text-secondary hover:text-primary transition-colors" href="#contact">Contact</a>
+<div class="flex gap-4 ml-4">
+<a class="border border-outline text-on-surface px-6 py-2 rounded-lg font-body-md hover:bg-surface-container transition-all flex items-center gap-2" href="#">
+<svg class="lucide lucide-download" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
+                        CV
+                    </a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-body-md hover:opacity-90 transition-all pulse-cta">Hire Me</button>
+</div>
+</div>
+<button class="md:hidden text-on-surface">
+<svg class="lucide lucide-menu" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+</button>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center overflow-hidden max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-20 reveal active">
+<div class="grid md:grid-cols-12 gap-gutter items-center w-full">
+<div class="md:col-span-7 z-10 order-2 md:order-1">
+<div class="space-y-6">
+<span class="inline-block font-label-mono text-label-mono text-primary bg-primary-container/10 px-3 py-1 rounded">AVAILABLE FOR REMOTE WORK</span>
+<h1 class="font-display-lg text-4xl md:text-display-lg tracking-tight">Ahmad Dimas Abid Muttaqi</h1>
+<div class="h-10 md:h-12">
+<span class="font-headline-md md:font-headline-lg text-xl md:text-headline-lg text-secondary typewriter" id="typewriter">Senior Backend </span>
+</div>
+<p class="font-body-lg text-body-md md:text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+                            Senior Backend Engineer with 7+ years of experience specializing in high-impact infrastructure and legacy modernization. Architecting robust digital foundations with a focus on security, scalability, and seamless remote collaboration.
+                        </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<a class="bg-inverse-surface text-inverse-on-surface px-8 py-4 rounded font-body-md flex items-center gap-2 hover:bg-on-surface transition-all" href="#projects">
+                                View Architecture 
+                                <svg class="lucide lucide-arrow-right" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+</a>
+<a class="border border-outline px-8 py-4 rounded font-body-md flex items-center gap-2 hover:bg-surface-container transition-all" href="https://github.com/ahmaddimas" target="_blank">
+                                GitHub 
+                                <svg class="lucide lucide-github" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 relative mb-8 md:mb-0 order-1 md:order-2 float-anim">
+<div class="relative w-full aspect-[4/5] max-w-[320px] md:max-w-md mx-auto">
+<img alt="Ahmad Dimas Professional Portrait" class="w-full h-full object-cover hero-mask grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBskTBCjiMGR5CUE4rPGe3_RPNEQ7ssOXITxI-SEN-urAGqppbUi-CYOEMMQqjFEysmyu7WyCifZAIiFk-EkEEXg9uFTXHrzEVv-fNjhaUHzBXIOHxvGJqLac5rFY8v2xTapTLjCOa6-wVHf-5SHdz-vgAI6goBdhS1BFzsL16qu03GE7eBmmCX7_umGh6ewJapmzDp8QDpjAZ_tgiXPH08wH9_nJIcXgxhFQ9prDHCjThIoSRKJqRxdz2BCfTmPiCwozH1afM1VC5R">
+</div>
+</div>
+</div>
+</section>
+<!-- Built for Global Operations -->
+<section class="py-24 bg-surface-container-lowest/50 backdrop-blur-sm border-y border-border-subtle reveal active">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-6 shuffle-target" data-shuffled="true">Built for Global Operations</h2>
+<p class="text-secondary mb-8 text-body-lg">3+ years of fully remote experience — working solo across a 6-hour timezone gap with US-based clients and collaborating with distributed teams.</p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="text-primary mt-1">
+<svg class="lucide lucide-globe" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><line x1="2" x2="22" y1="12" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+</span>
+<div>
+<h4 class="font-bold">Global Async Specialist</h4>
+<p class="text-on-surface-variant">Proven track record with US-based B2B platforms, managing complex e-commerce stacks independently.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="text-primary mt-1">
+<svg class="lucide lucide-file-text" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><line x1="10" x2="8" y1="9" y2="9"></line></svg>
+</span>
+<div>
+<h4 class="font-bold">Async-First Philosophy</h4>
+<p class="text-on-surface-variant">Heavy emphasis on exhaustive documentation and proactive status reporting to eliminate synchronization bottlenecks.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="text-primary mt-1">
+<svg class="lucide lucide-shield-check" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+</span>
+<div>
+<h4 class="font-bold">Security-Aware Engineering</h4>
+<p class="text-on-surface-variant">Hands-on OWASP remediation in regulated environments with monthly release sign-offs.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 md:gap-6">
+<div class="p-6 md:p-8 border border-border-subtle bg-white">
+<span class="text-3xl md:text-display-lg text-primary block mb-2">3+</span>
+<span class="font-label-mono text-xs uppercase tracking-widest text-secondary">Years Remote</span>
+</div>
+<div class="p-6 md:p-8 border border-border-subtle bg-white">
+<span class="text-3xl md:text-display-lg text-primary block mb-2">100%</span>
+<span class="font-label-mono text-xs uppercase tracking-widest text-secondary">Async-Ready</span>
+</div>
+<div class="p-6 md:p-8 border border-border-subtle bg-white">
+<span class="text-3xl md:text-display-lg text-primary block mb-2">6h</span>
+<span class="font-label-mono text-xs uppercase tracking-widest text-secondary">TZ Overlap</span>
+</div>
+<div class="p-6 md:p-8 border border-border-subtle bg-white">
+<span class="text-3xl md:text-display-lg text-primary block mb-2">7+</span>
+<span class="font-label-mono text-xs uppercase tracking-widest text-secondary">Years Experience</span>
+</div>
+</div>
+</div>
+</div>
+</section><section class="py-24 bg-surface/50 backdrop-blur-sm reveal border-b border-border-subtle active" id="strengths"><div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop"><div class="mb-16"><div class="flex items-center gap-4 mb-4"><span class="text-primary"><svg class="lucide lucide-layers" fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></span><h2 class="font-headline-lg text-headline-lg shuffle-target" data-shuffled="true">Engineering Strengths</h2></div><p class="text-secondary mt-2">Core competencies developed through years of high-stakes backend engineering.</p></div><div class="grid md:grid-cols-3 gap-gutter"><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-refresh-cw text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg> Legacy Modernization</h4><p class="text-on-surface-variant text-sm leading-relaxed">Converting monolithic systems into resilient microservices with zero downtime.</p></div><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-shield text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg> Security-First</h4><p class="text-on-surface-variant text-sm leading-relaxed">Vulnerability remediation (OWASP) and building secure authentication pipelines.</p></div><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-zap text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M4 14h7L9 21l11-11h-7l2-7z"></path></svg> Performance Tuning</h4><p class="text-on-surface-variant text-sm leading-relaxed">Optimizing database queries and backend latency for high-traffic environments.</p></div><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-cloud text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 19c3.037 0 5.5-2.463 5.5-5.5 0-2.97-2.354-5.382-5.29-5.49A7.001 7.001 0 0 0 5 10c-2.732 0-4.987 2.178-5.05 4.91A4.5 4.5 0 0 0 4.5 19z"></path></svg> Cloud Native</h4><p class="text-on-surface-variant text-sm leading-relaxed">Expertise in OpenShift, Kubernetes, and Docker for scalable deployments.</p></div><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-eye text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg> Full Observability</h4><p class="text-on-surface-variant text-sm leading-relaxed">Implementing ELK Stack and APM for data-driven debugging and monitoring.</p></div><div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all group"><h4 class="font-bold mb-3 flex items-center gap-2"><svg class="lucide lucide-users text-primary" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Async Leadership</h4><p class="text-on-surface-variant text-sm leading-relaxed">Scaling engineering impact through documentation and proactive collaboration.</p></div></div></div></section>
+<!-- Professional Experience -->
+<section class="py-24 bg-surface-container-low/50 backdrop-blur-sm reveal active" id="experience">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-16">
+<div class="flex items-center gap-4 mb-4">
+<span class="text-primary">
+<svg class="lucide lucide-briefcase" fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+</span>
+<h2 class="font-headline-lg text-headline-lg shuffle-target" data-shuffled="true">Professional Experience</h2>
+</div>
+<p class="text-secondary mt-2">A track record of technical leadership and architectural growth across diverse domains.</p>
+</div>
+<div class="space-y-16">
+<!-- AXA Mandiri -->
+<div class="grid md:grid-cols-4 gap-8">
+<div class="md:col-span-1">
+<span class="font-label-mono text-secondary">2023 - 2026</span>
+<h4 class="font-bold mt-2 uppercase tracking-wide">Backend Developer (Java)</h4>
+<p class="text-primary text-sm font-bold mt-1">AXA MANDIRI FINANCIAL SERVICES</p>
+</div>
+<div class="md:col-span-3 border-l border-border-subtle pl-6 md:pl-12">
+<ul class="space-y-4 text-on-surface-variant leading-relaxed">
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Led migration of legacy services to Red Hat OpenShift, transitioning from on-premise to cloud.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Remediated security vulnerabilities identified by pentesters for monthly production deployments.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> <span class="bg-primary-container/10 px-1 font-bold text-on-surface">Raised code coverage from 30% to 80%+</span> by integrating JUnit/Mockito test suites.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Implemented ELK Stack (Elasticsearch, Logstash, Kibana) with APM for centralized logging.</li>
+</ul>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">Quarkus</span><span class="tech-tag">OpenShift</span><span class="tech-tag">Kafka</span><span class="tech-tag">ELK Stack</span>
+</div>
+</div>
+</div>
+<!-- Lime Commerce -->
+<div class="grid md:grid-cols-4 gap-8">
+<div class="md:col-span-1">
+<span class="font-label-mono text-secondary">2020 - 2023</span>
+<h4 class="font-bold mt-2 uppercase tracking-wide">Full-Stack Developer</h4>
+<p class="text-primary text-sm font-bold mt-1">LIME COMMERCE (REMOTE US)</p>
+</div>
+<div class="md:col-span-3 border-l border-border-subtle pl-6 md:pl-12">
+<ul class="space-y-4 text-on-surface-variant leading-relaxed">
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Sole developer for Bramble Company (US-based), working fully independently across 6-hour TZ gap.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> <span class="bg-primary-container/10 px-1 font-bold text-on-surface">Improved PageSpeed score from 35 to 90+</span> through intensive asset optimization.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Migrated production Magento 1 store to Magento 2, including data and custom extension porting.</li>
+</ul>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="tech-tag">PHP</span><span class="tech-tag">Magento 2</span><span class="tech-tag">Linux</span><span class="tech-tag">MySQL</span><span class="tech-tag">REST APIs</span>
+</div>
+</div>
+</div>
+<!-- Aero Systems -->
+<div class="grid md:grid-cols-4 gap-8">
+<div class="md:col-span-1">
+<span class="font-label-mono text-secondary">2018 - 2019</span>
+<h4 class="font-bold mt-2 uppercase tracking-wide">Software Engineer</h4>
+<p class="text-primary text-sm font-bold mt-1">PT. AERO SYSTEMS INDONESIA</p>
+</div>
+<div class="md:col-span-3 border-l border-border-subtle pl-6 md:pl-12">
+<ul class="space-y-4 text-on-surface-variant leading-relaxed">
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Delivered AMALA Loyalty Management System for Garuda Indonesia and Citilink.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Integrated Apache Camel for enterprise workflow automation.</li>
+<li class="flex gap-3"><span class="text-primary font-bold">»</span> Deployed services using Docker and Kubernetes for high-scale airline operations.</li>
+</ul>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">Apache Camel</span><span class="tech-tag">Docker</span><span class="tech-tag">Kubernetes</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Education Section (Reordered below Experience) -->
+<section class="py-24 bg-surface/50 backdrop-blur-sm reveal border-t border-border-subtle active" id="education">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-16">
+<div class="flex items-center gap-4 mb-4">
+<span class="text-primary">
+<svg class="lucide lucide-graduation-cap" fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+</span>
+<h2 class="font-headline-lg text-headline-lg shuffle-target" data-shuffled="true">Education</h2>
+</div>
+<p class="text-secondary mt-2">Academic foundation in computer science and information technology.</p>
+</div>
+<div class="space-y-12">
+<!-- Binus -->
+<div class="grid md:grid-cols-4 gap-8">
+<div class="md:col-span-1">
+<span class="font-label-mono text-secondary">2019 - 2023</span>
+<h4 class="font-bold mt-2 uppercase tracking-wide">Bachelor of Technology</h4>
+<p class="text-primary text-sm font-bold mt-1">BINA NUSANTARA UNIVERSITY</p>
+</div>
+<div class="md:col-span-3 border-l border-border-subtle pl-6 md:pl-12">
+<h4 class="font-headline-md text-xl font-bold mb-2">Computer Science</h4>
+<p class="text-on-surface-variant leading-relaxed">
+                                Focused on software engineering, distributed systems, and backend architecture. Graduated with honors, applying theoretical concepts to real-world cloud infrastructures.
+                            </p>
+</div>
+</div>
+<!-- SMK Telkom -->
+<div class="grid md:grid-cols-4 gap-8">
+<div class="md:col-span-1">
+<span class="font-label-mono text-secondary">2015 - 2018</span>
+<h4 class="font-bold mt-2 uppercase tracking-wide">Information Technology</h4>
+<p class="text-primary text-sm font-bold mt-1">SMK TELKOM MALANG</p>
+</div>
+<div class="md:col-span-3 border-l border-border-subtle pl-6 md:pl-12">
+<h4 class="font-headline-md text-xl font-bold mb-2">Vocational High School</h4>
+<p class="text-on-surface-variant leading-relaxed">
+                                Specialized in software development fundamentals, networking, and early systems administration. Won several regional programming competitions during tenure.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects -->
+<section class="py-24 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop reveal active" id="projects">
+<div class="flex items-center gap-4 mb-12">
+<span class="text-primary">
+<svg class="lucide lucide-terminal" fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" x2="20" y1="19" y2="19"></line></svg>
+</span>
+<h2 class="font-headline-lg text-headline-lg shuffle-target" data-shuffled="true">Featured Projects</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter" id="projects-grid">
+<!-- Project 1 -->
+<div class="project-card border border-border-subtle bg-white hover:border-primary transition-all flex flex-col h-full group">
+<div class="overflow-hidden h-48">
+<img alt="Job Prep Assistant" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ_x92c2NLobZSYwIUBhHJoU2QlK53D8Uz2Q5HLvDuGDLUmiEJ4w7fSyGgjDB4CVNVWy0UiJCiVlTv6mLvKgl6lUSoOnaH2dGPUVgWHHfbWQB01jx0kFQSfqH_bupfkPlCA5hZhdbT8r6GHONZ1x4bXnjVtoqBSDzXV22k3alWMlcohYpiKJmgUQ8IhME0pBH6oJ08AAGLC-q-4tGmfwVVCq5Z8GGzhInTCNZd_yiuq6XnS6O5AejKPygAn37B3ggc1EVMtzVZVOVu">
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-3">Job Prep Assistant</h3>
+<p class="text-on-surface-variant text-sm flex-grow mb-6">AI-powered job analyzer with 100% line coverage and multi-provider LLM support. Implements SSRF protection.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="tech-tag">Next.js</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Vercel AI</span>
+</div>
+<div class="flex flex-wrap gap-4 mt-auto">
+<a class="text-primary font-bold text-sm flex items-center gap-2 hover:underline" href="https://job-preparation-ahmaddimas-projects.vercel.app/" target="_blank">
+                                Live Demo 
+                                <svg class="lucide lucide-external-link" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+</a>
+<a class="text-secondary font-bold text-sm flex items-center gap-2 hover:text-primary transition-colors" href="https://github.com/ahmaddimas" target="_blank">
+<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+                                View Repository
+                            </a>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="project-card border border-border-subtle bg-white hover:border-primary transition-all flex flex-col h-full group">
+<div class="overflow-hidden h-48">
+<img alt="URL Shortener" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK69qD3cBilLPVOKSSGbVd9RI8Qu4y2UZ1ciHZ1oZe_UQNR_F5S_VUnMBWkSzDfN-AysTgCtPUjyVSlUYrqjwn-qopWm2SFzDR7cysX2lKDIPmdBdrWBG4bx0RPp0VT1oj9VEIGmJW7WWPWEVGFDpMJLuUgnG4DvvPDiY8R0fX2OZvKt7oKiqbru9rQG-Sj4Y9nyOj1_pvuzGURw8f-PFFtFN7UbMt3704XC-P3I7VX1KJ4X1Q3AUouMxwoopTmRE6wTq9QBGeuPrT">
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-3">Backend URL Engine</h3>
+<p class="text-on-surface-variant text-sm flex-grow mb-6">Production-quality Java 25 service with Redis-backed caching, rate limiting, and observability dashboards.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="tech-tag">Java 25</span><span class="tech-tag">Spring Boot 4</span><span class="tech-tag">Redis</span>
+</div>
+<div class="flex flex-wrap gap-4 mt-auto">
+<a class="text-primary font-bold text-sm flex items-center gap-2 hover:underline" href="https://github.com/ahmaddimas/urlshortener" target="_blank">
+<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+                                View Repository
+                            </a>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="project-card border border-border-subtle bg-white hover:border-primary transition-all flex flex-col h-full group">
+<div class="overflow-hidden h-48">
+<img alt="Bramble B2B" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdrIlRMOPxniSXINXCNU2DPu60MFsXyUek8nKULXN7CU9k6KSsXX4NqB8AW2RjgvCU7AW_znpC_Ng_oDDuHcaQT-9d7yKsSE3X-f7PAoUbpYe44wCr22suYQ4i9AIXTvBElTThgop9lgB-HrMmyzrdXWeAx5CXf52PvGGIsLOXWhbU6vjJix2cRiNlEhMwT73iRLjwOAG3xtCbq17zUWCKzW5GxLPIUr0WLjEZhlI-TBOQ9PZozmG67P1d3JF4kAlNgMBDJLrr866l">
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-3">Bramble B2B</h3>
+<p class="text-on-surface-variant text-sm flex-grow mb-6">US-based custom furniture platform. Optimized performance from 35 to 90+ PageSpeed. Sole developer role.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="tech-tag">Magento 2</span><span class="tech-tag">PHP</span><span class="tech-tag">Linux Ops</span>
+</div>
+<div class="flex flex-wrap gap-4 mt-auto">
+<a class="text-primary font-bold text-sm flex items-center gap-2 hover:underline" href="https://brambleco.com" target="_blank">
+                                Visit Site 
+                                <svg class="lucide lucide-external-link" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+</a>
+<a class="text-secondary font-bold text-sm flex items-center gap-2 hover:text-primary transition-colors" href="https://github.com/ahmaddimas" target="_blank">
+<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+                                View Repository
+                            </a>
+</div>
+</div>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter mt-gutter hidden" id="more-projects">
+<!-- Additional Projects -->
+<div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all flex flex-col h-full group">
+<h3 class="font-headline-md text-headline-md mb-3">AMALA Loyalty</h3>
+<p class="text-on-surface-variant text-sm mb-6">Enterprise loyalty platform for Garuda Indonesia &amp; Citilink. Built with Apache Camel and Spring Boot.</p>
+<div class="flex flex-wrap gap-2 mt-auto mb-6">
+<span class="tech-tag">Java</span><span class="tech-tag">Apache Camel</span><span class="tech-tag">Kubernetes</span>
+</div>
+<div class="flex flex-wrap gap-4">
+<a class="text-secondary font-bold text-sm flex items-center gap-2 hover:text-primary transition-colors" href="https://github.com/ahmaddimas" target="_blank">
+<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+                            View Repository
+                        </a>
+</div>
+</div>
+<div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all flex flex-col h-full group">
+<h3 class="font-headline-md text-headline-md mb-3">OSVAS Platform</h3>
+<p class="text-on-surface-variant text-sm mb-6">Real estate discovery platform with high-quality property listing engines and REST API integration.</p>
+<div class="flex flex-wrap gap-2 mt-auto mb-6">
+<span class="tech-tag">PHP</span><span class="tech-tag">Laravel</span><span class="tech-tag">Nova</span>
+</div>
+<div class="flex flex-wrap gap-4">
+<a class="text-secondary font-bold text-sm flex items-center gap-2 hover:text-primary transition-colors" href="https://github.com/ahmaddimas" target="_blank">
+<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+                            View Repository
+                        </a>
+</div>
+</div>
+<div class="p-8 border border-border-subtle bg-white hover:border-primary transition-all flex flex-col h-full group">
+<h3 class="font-headline-md text-headline-md mb-3">Java Pitfalls Demo</h3>
+<p class="text-on-surface-variant text-sm mb-6">Educational repository demonstrating common Spring/Java anti-patterns and production-ready solutions.</p>
+<div class="flex flex-wrap gap-2 mt-auto mb-6">
+<span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span>
+</div>
+<div class="flex flex-wrap gap-4">
+<a class="text-secondary font-bold text-sm flex items-center gap-2 hover:text-primary transition-colors" href="https://github.com/ahmaddimas" target="_blank">
+<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+                            View Repository
+                        </a>
+</div>
+</div>
+</div>
+<div class="mt-16 flex justify-center">
+<button class="border border-on-surface text-on-surface px-10 py-3 font-bold hover:bg-on-surface hover:text-white transition-all uppercase tracking-widest text-sm" id="toggle-btn" onclick="toggleProjects()">Show All Projects</button>
+</div>
+</section>
+<!-- Technical Arsenal -->
+<section class="py-24 bg-surface-container-highest/30 backdrop-blur-sm reveal active" id="skills">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex items-center gap-4 mb-12">
+<span class="text-primary">
+<svg class="lucide lucide-wrench" fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+</span>
+<h2 class="font-headline-lg text-headline-lg shuffle-target" data-shuffled="true">Technical Arsenal</h2>
+</div>
+<div class="grid md:grid-cols-12 gap-12">
+<div class="md:col-span-8">
+<div class="grid md:grid-cols-2 gap-12">
+<div>
+<h3 class="font-label-mono text-primary border-b border-outline-variant pb-2 mb-6 uppercase tracking-widest text-xs font-bold">Languages</h3>
+<ul class="space-y-3">
+<li class="flex justify-between items-center"><span class="font-bold">Java (7+ Years)</span>
+<svg class="lucide lucide-check-circle-2 text-primary" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+</li>
+<li class="flex justify-between items-center"><span class="">PHP (3+ Years)</span> <span class="text-secondary text-sm">Expert</span></li>
+<li class="flex justify-between items-center"><span class="">C# / .NET Core</span> <span class="text-secondary text-sm">Senior</span></li>
+<li class="flex justify-between items-center"><span class="">JavaScript / Node.js</span> <span class="text-secondary text-sm">Advanced</span></li>
+<li class="flex justify-between items-center"><span class="">Go / Python</span> <span class="text-secondary text-sm">Advanced</span></li>
+</ul>
+</div>
+<div>
+<h3 class="font-label-mono text-primary border-b border-outline-variant pb-2 mb-6 uppercase tracking-widest text-xs font-bold">Frameworks</h3>
+<ul class="space-y-3">
+<li class="flex justify-between items-center"><span class="font-bold">Spring Boot / Cloud</span> <span class="text-secondary text-sm">Core</span></li>
+<li class="flex justify-between items-center"><span class="">Quarkus</span> <span class="text-secondary text-sm">Expert</span></li>
+<li class="flex justify-between items-center"><span class="">Apache Camel</span> <span class="text-secondary text-sm">Senior</span></li>
+<li class="flex justify-between items-center"><span class="">Laravel / Magento 2</span> <span class="text-secondary text-sm">Senior</span></li>
+</ul>
+</div>
+<div>
+<h3 class="font-label-mono text-primary border-b border-outline-variant pb-2 mb-6 uppercase tracking-widest text-xs font-bold">Infrastructure</h3>
+<ul class="space-y-3">
+<li class="flex justify-between items-center"><span class="">Docker / K8s / OpenShift</span> <span class="text-secondary text-sm">Expert</span></li>
+<li class="flex justify-between items-center"><span class="">PostgreSQL / MS SQL</span> <span class="text-secondary text-sm">Senior</span></li>
+<li class="flex justify-between items-center"><span class="">Redis / MongoDB</span> <span class="text-secondary text-sm">Senior</span></li>
+<li class="flex justify-between items-center"><span class="">Linux / CI-CD</span> <span class="text-secondary text-sm">Senior</span></li>
+</ul>
+</div>
+<div>
+<h3 class="font-label-mono text-primary border-b border-outline-variant pb-2 mb-6 uppercase tracking-widest text-xs font-bold">Observability</h3>
+<ul class="space-y-3">
+<li class="flex justify-between items-center"><span class="">ELK Stack / APM</span> <span class="text-secondary text-sm">Expert</span></li>
+<li class="flex justify-between items-center"><span class="">Kafka</span> <span class="text-secondary text-sm">Expert</span></li>
+<li class="flex justify-between items-center"><span class="">Prometheus / Grafana</span> <span class="text-secondary text-sm">Senior</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="md:col-span-4">
+<div class="bg-inverse-surface p-8 text-inverse-on-surface h-full">
+<h3 class="font-headline-md text-headline-md mb-6">Remote Success DNA</h3>
+<ul class="space-y-8">
+<li class="flex gap-4">
+<span class="text-primary-fixed">
+<svg class="lucide lucide-file-text" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><line x1="10" x2="8" y1="9" y2="9"></line></svg>
+</span>
+<div>
+<h4 class="font-bold">Documentation Mindset</h4>
+<p class="text-sm text-surface-variant">Writing as a primary mode of scaling knowledge and reducing meetings.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="text-primary-fixed">
+<svg class="lucide lucide-messages-square" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z"></path><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"></path></svg>
+</span>
+<div>
+<h4 class="font-bold">Proactive Sync</h4>
+<p class="text-sm text-surface-variant">Consistent status updates across timezones for maximum visibility.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="text-primary-fixed">
+<svg class="lucide lucide-shield-check" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+</span>
+<div>
+<h4 class="font-bold">Extreme Ownership</h4>
+<p class="text-sm text-surface-variant">Solo developer experience handling end-to-end US-based production environments.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Engineering Principles -->
+<section class="py-12 bg-surface-container-low/50 backdrop-blur-sm reveal active">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<h3 class="font-label-mono text-primary border-b border-outline-variant pb-2 mb-8 uppercase tracking-widest text-center text-xs font-bold shuffle-target" data-shuffled="true">ENGINEERING PRINCIPLES</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="p-6 border border-border-subtle bg-white/80 text-center hover:border-primary transition-all flex flex-col items-center">
+<svg class="lucide lucide-check-circle text-primary mb-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+<span class="font-bold text-sm">SOLID / OOP</span>
+</div>
+<div class="p-6 border border-border-subtle bg-white/80 text-center hover:border-primary transition-all flex flex-col items-center">
+<svg class="lucide lucide-layout-grid text-primary mb-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><rect height="7" rx="1" width="7" x="3" y="3"></rect><rect height="7" rx="1" width="7" x="14" y="3"></rect><rect height="7" rx="1" width="7" x="14" y="14"></rect><rect height="7" rx="1" width="7" x="3" y="14"></rect></svg>
+<span class="font-bold text-sm">Domain-Driven Design</span>
+</div>
+<div class="p-6 border border-border-subtle bg-white/80 text-center hover:border-primary transition-all flex flex-col items-center">
+<svg class="lucide lucide-layers text-primary mb-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+<span class="font-bold text-sm">Clean Architecture</span>
+</div>
+<div class="p-6 border border-border-subtle bg-white/80 text-center hover:border-primary transition-all flex flex-col items-center">
+<svg class="lucide lucide-bug text-primary mb-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><rect height="14" rx="4" width="8" x="8" y="6"></rect><path d="m19 7-3 2"></path><path d="m5 7 3 2"></path><path d="m19 19-3-2"></path><path d="m5 19 3-2"></path><path d="M20 13h-4"></path><path d="M4 13h4"></path><path d="m10 4 1 2"></path><path d="m14 4-1 2"></path></svg>
+<span class="font-bold text-sm">TDD / CI-CD</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 bg-white/40 backdrop-blur-sm reveal active" id="contact">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<h2 class="font-display-lg text-4xl md:text-display-lg mb-8 shuffle-target" data-shuffled="true">Ready to Scale Your Infrastructure?</h2>
+<p class="text-secondary text-body-lg max-w-2xl mx-auto mb-12">Currently open to senior backend or infrastructure roles within remote-first organizations. Available for full-time or high-impact consulting.</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+<a class="w-full md:w-auto bg-primary text-on-primary px-12 py-5 rounded-lg font-bold flex items-center justify-center gap-3 hover:scale-105 transition-transform" href="mailto:ahmaddimas18@gmail.com">
+<svg class="lucide lucide-mail" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><rect height="16" rx="2" width="20" x="2" y="4"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                        ahmaddimas18@gmail.com
+                    </a>
+<a class="w-full md:w-auto border border-border-subtle px-12 py-5 rounded-lg font-bold flex items-center justify-center gap-3 hover:bg-surface-container transition-all" href="https://linkedin.com/in/ahmaddimas" target="_blank">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                        LinkedIn Profile
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full py-12 bg-surface-container-lowest/80 backdrop-blur-md border-t border-border-subtle">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter text-center md:text-left">
+<div class="flex flex-col items-center md:items-start">
+<span class="font-label-mono text-label-mono text-on-surface font-bold uppercase mb-2">Ahmad Dimas</span>
+<p class="text-secondary font-body-md text-sm">© 2024 Ahmad Dimas. Built for performance and longevity.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-secondary font-body-md hover:text-primary transition-all duration-300 underline underline-offset-4" href="mailto:ahmaddimas18@gmail.com"><svg class="lucide lucide-mail inline-block mr-2" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><rect height="16" rx="2" width="20" x="2" y="4"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>Email</a>
+<a class="text-secondary font-body-md hover:text-primary transition-all duration-300 underline underline-offset-4" href="https://linkedin.com/in/ahmaddimas" target="_blank"><svg class="lucide lucide-linkedin inline-block mr-2" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>LinkedIn</a>
+<a class="text-secondary font-body-md hover:text-primary transition-all duration-300 underline underline-offset-4" href="https://github.com/ahmaddimas" target="_blank"><svg class="lucide lucide-github inline-block mr-2" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>GitHub</a>
+</div>
+</div>
+</footer>
+<script>
+        // Shader Animation Implementation
+        const canvas = document.getElementById('bg-canvas');
+        const gl = canvas.getContext('webgl');
+
+        if (gl) {
+            const vsSource = `
+                attribute vec4 a_position;
+                varying vec2 v_texCoord;
+                void main() {
+                    gl_Position = a_position;
+                    v_texCoord = a_position.xy * 0.5 + 0.5;
+                }
+            `;
+            const fsSource = `
+                precision highp float;
+                uniform float u_time;
+                uniform vec2 u_resolution;
+                varying vec2 v_texCoord;
+
+                float hash(vec2 p) {
+                    p = fract(p * vec2(123.34, 456.21));
+                    p += dot(p, p + 45.32);
+                    return fract(p.x * p.y);
+                }
+
+                float noise(vec2 p) {
+                    vec2 i = floor(p);
+                    vec2 f = fract(p);
+                    float a = hash(i);
+                    float b = hash(i + vec2(1.0, 0.0));
+                    float c = hash(i + vec2(0.0, 1.0));
+                    float d = hash(i + vec2(1.0, 1.0));
+                    vec2 u = f * f * (3.0 - 2.0 * f);
+                    return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+                }
+
+                void main() {
+                    vec2 uv = v_texCoord;
+                    float n = noise(uv * 50.0 + u_time * 0.05);
+                    vec3 color = vec3(0.97, 0.98, 0.99); 
+                    float slowNoise = noise(uv * 3.0 - u_time * 0.1);
+                    color = mix(color, vec3(0.95, 0.96, 0.97), slowNoise * 0.3);
+                    vec2 grid = fract(uv * 10.0);
+                    float line = smoothstep(0.0, 0.02, grid.x) * smoothstep(0.0, 0.02, grid.y);
+                    color = mix(vec3(0.92, 0.93, 0.95), color, line);
+                    gl_FragColor = vec4(color, 1.0);
+                }
+            `;
+
+            function createShader(gl, type, source) {
+                const shader = gl.createShader(type);
+                gl.shaderSource(shader, source);
+                gl.compileShader(shader);
+                return shader;
+            }
+
+            const program = gl.createProgram();
+            gl.attachShader(program, createShader(gl, gl.VERTEX_SHADER, vsSource));
+            gl.attachShader(program, createShader(gl, gl.FRAGMENT_SHADER, fsSource));
+            gl.linkProgram(program);
+
+            const positionBuffer = gl.createBuffer();
+            gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]), gl.STATIC_DRAW);
+
+            const positionLocation = gl.getAttribLocation(program, 'a_position');
+            const timeLocation = gl.getUniformLocation(program, 'u_time');
+            const resolutionLocation = gl.getUniformLocation(program, 'u_resolution');
+
+            function render(time) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                gl.viewport(0, 0, canvas.width, canvas.height);
+                gl.useProgram(program);
+                gl.enableVertexAttribArray(positionLocation);
+                gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+                gl.uniform1f(timeLocation, time * 0.001);
+                gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
+                gl.drawArrays(gl.TRIANGLES, 0, 6);
+                requestAnimationFrame(render);
+            }
+            requestAnimationFrame(render);
+        }
+
+        // Typewriter Animation
+        const roles = ['Senior Backend Engineer', 'Infrastructure Specialist', 'Remote Collaboration Expert'];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById('typewriter');
+
+        function type() {
+            const currentRole = roles[roleIndex];
+            if (isDeleting) {
+                typewriterElement.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterElement.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                typeSpeed = 2500;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        // Shuffle Animation for Headings
+        function shuffleText(element) {
+            const originalText = element.innerText;
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+            let iteration = 0;
+            
+            const interval = setInterval(() => {
+                element.innerText = originalText.split('')
+                    .map((char, index) => {
+                        if (index < iteration) return originalText[index];
+                        if (char === ' ') return ' ';
+                        return characters[Math.floor(Math.random() * characters.length)];
+                    })
+                    .join('');
+                
+                if (iteration >= originalText.length) {
+                    clearInterval(interval);
+                    element.innerText = originalText;
+                }
+                iteration += 1/3;
+            }, 30);
+        }
+
+        // Scroll Reveal
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    const shuffleTarget = entry.target.querySelector('.shuffle-target');
+                    if (shuffleTarget && !shuffleTarget.dataset.shuffled) {
+                        shuffleText(shuffleTarget);
+                        shuffleTarget.dataset.shuffled = 'true';
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Project Toggle
+        function toggleProjects() {
+            const extraProjects = document.getElementById('more-projects');
+            const btn = document.getElementById('toggle-btn');
+            if (extraProjects.classList.contains('hidden')) {
+                extraProjects.classList.remove('hidden');
+                btn.textContent = 'Show Less';
+            } else {
+                extraProjects.classList.add('hidden');
+                btn.textContent = 'Show All Projects';
+                document.getElementById('projects').scrollIntoView();
+            }
+        }
+
+        window.onload = () => {
+            type();
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        };
+    </script>
+
+
+</body></html>
