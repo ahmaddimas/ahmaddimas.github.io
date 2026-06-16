@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="480" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc"/>
+      <stop offset="100%" style="stop-color:#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#004ac6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#e2e8f0"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="480" fill="url(#bg)"/>
+  <rect width="800" height="480" fill="url(#dots)"/>
+
+  <!-- Header Bar -->
+  <rect x="0" y="0" width="800" height="64" fill="#ffffff" opacity="0.95"/>
+  <rect x="0" y="63" width="800" height="1" fill="#e2e8f0"/>
+  <rect x="40" y="24" width="120" height="16" rx="8" fill="#1e293b"/>
+  <rect x="560" y="24" width="80" height="16" rx="8" fill="#e2e8f0"/>
+  <rect x="656" y="24" width="80" height="16" rx="8" fill="#e2e8f0"/>
+  <rect x="40" y="56" width="120" height="2" fill="url(#accent)"/>
+
+  <!-- Hero Banner -->
+  <rect x="40" y="96" width="720" height="160" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="72" y="128" width="300" height="20" rx="10" fill="#1e293b"/>
+  <rect x="72" y="164" width="240" height="12" rx="6" fill="#94a3b8"/>
+  <rect x="72" y="184" width="200" height="12" rx="6" fill="#94a3b8"/>
+  <rect x="72" y="216" width="140" height="32" rx="8" fill="url(#accent)"/>
+
+  <!-- Product Image Placeholder -->
+  <rect x="520" y="112" width="200" height="128" rx="12" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="544" y="144" width="152" height="8" rx="4" fill="#cbd5e1"/>
+  <rect x="544" y="160" width="120" height="8" rx="4" fill="#cbd5e1"/>
+  <rect x="544" y="176" width="100" height="8" rx="4" fill="#cbd5e1"/>
+  <rect x="544" y="200" width="80" height="24" rx="6" fill="#dbe1ff"/>
+
+  <!-- Product Grid -->
+  <rect x="40" y="280" width="224" height="160" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="64" y="304" width="176" height="96" rx="8" fill="#f1f5f9"/>
+  <rect x="80" y="336" width="100" height="8" rx="4" fill="#cbd5e1"/>
+  <rect x="80" y="352" width="80" height="8" rx="4" fill="#cbd5e1"/>
+  <rect x="64" y="416" width="80" height="10" rx="5" fill="#1e293b"/>
+  <rect x="160" y="416" width="60" height="10" rx="5" fill="url(#accent)"/>
+
+  <rect x="288" y="280" width="224" height="160" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="312" y="304" width="176" height="96" rx="8" fill="#f1f5f9"/>
+  <rect x="328" y="336" width="100" height="8" rx="4" fill="#cbd5e1"/>
+  <rect x="328" y="352" width="80" height="8" rx="4" fill="#cbd5e1"/>
+  <rect x="312" y="416" width="80" height="10" rx="5" fill="#1e293b"/>
+  <rect x="408" y="416" width="60" height="10" rx="5" fill="url(#accent)"/>
+
+  <rect x="536" y="280" width="224" height="160" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="560" y="304" width="176" height="96" rx="8" fill="#f1f5f9"/>
+  <rect x="576" y="336" width="100" height="8" rx="4" fill="#cbd5e1"/>
+  <rect x="576" y="352" width="80" height="8" rx="4" fill="#cbd5e1"/>
+  <rect x="560" y="416" width="80" height="10" rx="5" fill="#1e293b"/>
+  <rect x="656" y="416" width="60" height="10" rx="5" fill="url(#accent)"/>
+
+  <!-- Cart Icon -->
+  <circle cx="720" cy="120" r="28" fill="url(#accent)" opacity="0.1"/>
+  <circle cx="720" cy="120" r="20" fill="url(#accent)" opacity="0.15"/>
+  <text x="720" y="128" text-anchor="middle" font-family="monospace" font-size="16" fill="url(#accent)" font-weight="bold">🛒</text>
+</svg>

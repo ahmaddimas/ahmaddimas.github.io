@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="480" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc"/>
+      <stop offset="100%" style="stop-color:#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#004ac6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="480" fill="url(#bg)"/>
+  <rect width="800" height="480" fill="url(#grid)"/>
+
+  <!-- Header Bar -->
+  <rect x="0" y="0" width="800" height="56" fill="#ffffff" opacity="0.9"/>
+  <rect x="0" y="55" width="800" height="1" fill="#e2e8f0"/>
+  <circle cx="32" cy="28" r="12" fill="url(#accent)"/>
+  <rect x="56" y="22" width="140" height="12" rx="6" fill="#e2e8f0"/>
+  <rect x="600" y="22" width="80" height="12" rx="6" fill="#e2e8f0"/>
+  <rect x="696" y="22" width="80" height="12" rx="6" fill="#e2e8f0"/>
+
+  <!-- Main Content Area -->
+  <rect x="40" y="88" width="360" height="200" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="64" y="112" width="180" height="16" rx="8" fill="url(#accent)"/>
+  <rect x="64" y="144" width="280" height="10" rx="5" fill="#e2e8f0"/>
+  <rect x="64" y="164" width="240" height="10" rx="5" fill="#e2e8f0"/>
+  <rect x="64" y="184" width="200" height="10" rx="5" fill="#e2e8f0"/>
+  <rect x="64" y="220" width="120" height="32" rx="8" fill="url(#accent)"/>
+  <rect x="200" y="228" width="80" height="16" rx="8" fill="#e2e8f0"/>
+
+  <!-- Chat/Message Panel -->
+  <rect x="420" y="88" width="340" height="320" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="444" y="112" width="200" height="12" rx="6" fill="url(#accent)" opacity="0.2"/>
+  <rect x="444" y="140" width="292" height="48" rx="8" fill="#f1f5f9"/>
+  <rect x="460" y="152" width="200" height="8" rx="4" fill="#94a3b8"/>
+  <rect x="460" y="168" width="160" height="8" rx="4" fill="#94a3b8"/>
+  <rect x="444" y="204" width="292" height="48" rx="8" fill="url(#accent)" opacity="0.1"/>
+  <rect x="460" y="216" width="200" height="8" rx="4" fill="url(#accent)" opacity="0.6"/>
+  <rect x="460" y="232" width="160" height="8" rx="4" fill="url(#accent)" opacity="0.6"/>
+  <rect x="444" y="268" width="292" height="48" rx="8" fill="#f1f5f9"/>
+  <rect x="460" y="280" width="200" height="8" rx="4" fill="#94a3b8"/>
+  <rect x="460" y="296" width="160" height="8" rx="4" fill="#94a3b8"/>
+  <rect x="444" y="352" width="292" height="40" rx="8" fill="#f1f5f9"/>
+  <rect x="460" y="364" width="200" height="8" rx="4" fill="#cbd5e1"/>
+  <rect x="708" y="364" width="16" height="16" rx="8" fill="url(#accent)"/>
+
+  <!-- Analysis Panel -->
+  <rect x="40" y="308" width="360" height="100" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="64" y="332" width="120" height="12" rx="6" fill="url(#accent)" opacity="0.2"/>
+  <rect x="64" y="360" width="100" height="32" rx="8" fill="#dbe1ff"/>
+  <rect x="180" y="360" width="100" height="32" rx="8" fill="#dbe1ff"/>
+  <rect x="296" y="360" width="80" height="32" rx="8" fill="#dbe1ff"/>
+
+  <!-- Tech Stack Icons -->
+  <rect x="40" y="428" width="80" height="24" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="132" y="428" width="80" height="24" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="224" y="428" width="100" height="24" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Floating Elements -->
+  <circle cx="720" cy="120" r="24" fill="url(#accent)" opacity="0.1"/>
+  <circle cx="720" cy="120" r="16" fill="url(#accent)" opacity="0.2"/>
+  <text x="720" y="126" text-anchor="middle" font-family="monospace" font-size="14" fill="url(#accent)" font-weight="bold">AI</text>
+</svg>
