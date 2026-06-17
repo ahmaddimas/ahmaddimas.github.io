@@ -10,6 +10,17 @@ const { title, description } = Astro.props;
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>{title}</title>
     <meta name="description" content={description}>
+    <meta name="author" content="Ahmad Dimas Abid Muttaqi">
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ahmaddimas.github.io/photo.png">
+    <meta property="og:url" content="https://ahmaddimas.github.io">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content="https://ahmaddimas.github.io/photo.png">
+    <link rel="canonical" href="https://ahmaddimas.github.io">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,FILL@0..1&display=swap" rel="stylesheet">
     <style is:global>
@@ -323,7 +334,7 @@ const { title, description } = Astro.props;
         }
 
         // Typewriter Animation
-        const roles = ['Backend Engineer', 'Microservices Developer', 'Remote-Ready Professional'];
+        const roles = ['Backend Engineer', 'API Architect', 'Legacy Modernizer', 'Systems Engineer', 'Remote-Ready Professional'];
         let roleIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
