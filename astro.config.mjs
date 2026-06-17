@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ahmaddimas.github.io",
+  site: "https://www.ahmaddimas.dev",
   integrations: [tailwind(), sitemap()],
   devToolbar: {
     enabled: false
